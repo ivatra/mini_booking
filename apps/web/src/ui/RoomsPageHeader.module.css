@@ -1,0 +1,59 @@
+.m {
+  padding: var(--mantine-spacing-lg);
+  border: 1px solid var(--mantine-color-default-border);
+  border-radius: var(--mantine-radius-md);
+  background: var(--mantine-color-body);
+}
+
+.m__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--mantine-spacing-md);
+}
+
+.m__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.m__title {
+  margin: 0;
+  font-weight: 700;
+}
+
+.m__subtitle {
+  color: var(--mantine-color-dimmed);
+  font-weight: 500;
+}
+
+.m__actions {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--mantine-spacing-md);
+  margin-top: var(--mantine-spacing-md);
+  flex-wrap: nowrap;
+}
+
+.m__date {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.m__date-label {
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.m__date-input {
+  border-radius: var(--mantine-radius-md);
+}
+
+.m__add-button {
+  border-radius: var(--mantine-radius-md);
+  padding-inline: var(--mantine-spacing-lg);
+  white-space: nowrap;
+}
