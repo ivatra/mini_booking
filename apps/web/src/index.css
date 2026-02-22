@@ -1,10 +1,6 @@
 :root {
 }
 
-html {
-  scrollbar-gutter: stable;
-}
-
 *,
 *::before,
 *::after {
