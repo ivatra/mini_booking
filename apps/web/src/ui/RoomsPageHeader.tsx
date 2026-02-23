@@ -1,4 +1,4 @@
-import { Button, Group, Paper, Stack, Text, Title } from "@mantine/core";
+import { Group, Paper, Stack, Text, Title } from "@mantine/core";
 import { DatePickerInput } from "@mantine/dates";
 
 import classes from "./RoomsPageHeader.module.css";
@@ -18,26 +18,18 @@ const RoomsPageHeader = () => {
           <Text className={classes.mSubtitle}>2 отеля • 10 номеров</Text>
         </Stack>
 
-        <Group className={classes.mActions}>
-          <Stack className={classes.mDate}>
-            <Text className={classes.mDateLabel}>Выберите дату брони</Text>
-
-            <DatePickerInput
-              aria-label="Выберите диапазон дат"
-              type="range"
-              value={["2026-02-04", "2026-03-01"]}
-              clearable
-              valueFormat="DD.MM.YY"
-              classNames={{ input: classes.mDateInput }}
-            />
-          </Stack>
-
-          <Button
-            className={classes.mAddButton}
-            classNames={{ label: classes.mAddButtonLabel }}>
-            Добавить бронь
-          </Button>
-        </Group>
+        <Stack className={classes.mDate}>
+          <Text className={classes.mDateLabel}>Выберите дату брони</Text>
+          <DatePickerInput
+            size="md"
+            aria-label="Выберите диапазон дат"
+            type="range"
+            value={["2026-02-04", "2026-03-01"]}
+            clearable
+            valueFormat="DD.MM.YY"
+            classNames={{ input: classes.mDateInput }}
+          />
+        </Stack>
       </Group>
     </Paper>
   );

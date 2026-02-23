@@ -4,9 +4,8 @@
 
 .m__row {
   display: flex;
-  justify-content: space-between;
   align-items: flex-end;
-  gap: var(--mantine-spacing-md);
+  gap: calc(var(--mantine-spacing-lg) * 2);
 }
 
 .m__meta {
