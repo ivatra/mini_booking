@@ -1,4 +1,4 @@
-import type { GroupProps, ActionIconProps } from "@mantine/core";
+import type { ActionIconProps, GroupProps } from "@mantine/core";
 
 export const headerGroupProps: GroupProps = {
   display: "flex",

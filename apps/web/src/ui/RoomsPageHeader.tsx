@@ -1,4 +1,4 @@
-import { Group, Stack, Title, Text, Button, Paper } from "@mantine/core";
+import { Button, Group, Paper, Stack, Text, Title } from "@mantine/core";
 import { DatePickerInput } from "@mantine/dates";
 import classes from "./RoomsPageHeader.module.css";
 
@@ -7,6 +7,7 @@ import classes from "./RoomsPageHeader.module.css";
   более абстрактную логику)
   в моей практике я не люблю привязываться к другим селекторам, поэтому использую классы
 */
+
 const RoomsPageHeader = () => {
   return (
     <Paper className={classes.m}>

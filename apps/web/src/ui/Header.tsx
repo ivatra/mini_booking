@@ -1,8 +1,8 @@
-import { Group, Title, ActionIcon, Tooltip } from "@mantine/core";
-import { IconRefresh, IconBuilding } from "@tabler/icons-react";
-import { ThemeToggle } from "./ThemeToggle";
+import { ActionIcon, Group, Title, Tooltip } from "@mantine/core";
+import { IconBuilding, IconRefresh } from "@tabler/icons-react";
 import type { TActionIconProps } from "../types";
 import { headerActionIconStaticProps, headerGroupProps } from "./Header.styles";
+import { ThemeToggle } from "./ThemeToggle";
 
 // позже заменишь на свой store
 const isSuccessConnection = true; // store.isSuccessConnection
