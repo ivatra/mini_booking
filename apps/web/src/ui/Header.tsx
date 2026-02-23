@@ -1,8 +1,13 @@
 import { ActionIcon, Group, Title, Tooltip } from "@mantine/core";
-import { IconBuilding, IconRefresh } from "@tabler/icons-react";
+import { IconArrowLeft, IconBuilding, IconRefresh } from "@tabler/icons-react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import type { TActionIconProps } from "../types";
-import { headerActionIconStaticProps, headerGroupProps } from "./Header.styles";
+import {
+  headerActionIconStaticProps,
+  headerGoBackProps,
+  headerGroupProps,
+} from "./Header.styles";
 import { ThemeToggle } from "./ThemeToggle";
 
 // позже заменишь на свой store
@@ -24,6 +29,10 @@ const iconColor =
   "light-dark(var(--mantine-color-blue-6), var(--mantine-color-blue-3))";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isMainPage = location.pathname === "/";
+
   return (
     <Group {...headerGroupProps}>
       <Group gap="xs">
@@ -34,8 +43,23 @@ const Header = () => {
         <Title order={4}>MiniBooking</Title>
       </Group>
       <Group gap="sm">
+        {!isMainPage ? (
+          <Tooltip
+            withArrow
+            position="bottom"
+            openDelay={150}
+            label="Вернуться назад">
+            <ActionIcon
+              {...headerGoBackProps}
+              onClick={() => navigate(-1)}
+              aria-label="Вернуться назад">
+              <IconArrowLeft size={18} />
+            </ActionIcon>
+          </Tooltip>
+        ) : null}
         <ThemeToggle />
         <Tooltip
+          position="bottom"
           withArrow
           openDelay={150}
           label="Нажмите чтобы обновить подписку на обновление">
