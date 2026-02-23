@@ -1,14 +1,12 @@
 import { Badge, Button, Card, Group, Stack, Text, Title } from "@mantine/core";
 
-import { pickPreviewRooms, pluralizeRu } from "../helpers";
+import { pluralizeRu } from "../helpers";
 import type { IHotel } from "../types";
 import s from "./HotelCard.module.css";
-import HotelCardRoomPreview from "./HotelCardRoomPreview";
 
 const HotelCard = ({ id, city, name, rooms, address }: IHotel) => {
   const roomsCount = rooms.length;
   const roomsWord = pluralizeRu(roomsCount, "комната", "комнаты", "комнат");
-  const previewRooms = pickPreviewRooms(rooms, 3);
 
   return (
     <Card
@@ -33,17 +31,6 @@ const HotelCard = ({ id, city, name, rooms, address }: IHotel) => {
             </Text>
           ) : null}
         </Group>
-
-        <Stack
-          gap={8}
-          className={s.roomsList}>
-          {previewRooms.map((room) => (
-            <HotelCardRoomPreview
-              key={room.id}
-              {...room}
-            />
-          ))}
-        </Stack>
 
         <Button
           className={s.openRoomsButton}
