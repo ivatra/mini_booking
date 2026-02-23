@@ -1,4 +1,5 @@
 import { Box, Paper } from "@mantine/core";
+
 import Header from "./Header";
 import {
   layoutHeaderProps,

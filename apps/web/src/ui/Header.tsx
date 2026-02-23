@@ -1,5 +1,6 @@
 import { ActionIcon, Group, Title, Tooltip } from "@mantine/core";
 import { IconBuilding, IconRefresh } from "@tabler/icons-react";
+
 import type { TActionIconProps } from "../types";
 import { headerActionIconStaticProps, headerGroupProps } from "./Header.styles";
 import { ThemeToggle } from "./ThemeToggle";
@@ -43,4 +44,5 @@ const Header = () => {
     </Group>
   );
 };
+
 export default Header;

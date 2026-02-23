@@ -1,4 +1,5 @@
 import { Paper, type PaperProps } from "@mantine/core";
+
 import RoomsPageHeader from "../ui/RoomsPageHeader";
 
 const paperProps: PaperProps = {

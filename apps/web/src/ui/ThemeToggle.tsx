@@ -1,5 +1,6 @@
 import { ActionIcon, useMantineColorScheme } from "@mantine/core";
 import { IconMoon, IconSun } from "@tabler/icons-react";
+
 import type { TActionIconProps } from "../types";
 
 const iconProps: TActionIconProps = {
