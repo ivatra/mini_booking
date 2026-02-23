@@ -1,13 +1,13 @@
-.scroll_wrapper {
+.scrollWrapper {
   max-height: calc(100dvh - 280px);
   overflow-y: auto;
   background-color: inherit;
 }
+
 .grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--mantine-spacing-md);
-  overflow: auto;
   background-color: inherit;
 }
 

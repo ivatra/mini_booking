@@ -11,7 +11,10 @@ const HotelCardsList = () => {
         className={s.grid}
         component="section">
         {mockHotels.map((hotel) => (
-          <HotelCard {...hotel} />
+          <HotelCard
+            key={hotel.id}
+            {...hotel}
+          />
         ))}
       </Paper>
     </Box>
