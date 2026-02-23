@@ -3,18 +3,16 @@ import { DatePickerInput } from "@mantine/dates";
 
 import classes from "./RoomsPageHeader.module.css";
 
-/* m - это сокращенно main, классы по БЭМ
-  но я не вижу смысла делать этот блок масштабируемым (тоесть давать конкретное название сущности и 
-  более абстрактную логику)
-  в моей практике я не люблю привязываться к другим селекторам, поэтому использую классы
-*/
-
 const RoomsPageHeader = () => {
   return (
-    <Paper className={classes.m}>
+    <Paper
+      className={classes.m}
+      component="section">
       <Group className={classes.mRow}>
         <Stack className={classes.mMeta}>
-          <Title order={1} className={classes.mTitle}>
+          <Title
+            order={1}
+            className={classes.mTitle}>
             Отели
           </Title>
           <Text className={classes.mSubtitle}>2 отеля • 10 номеров</Text>
