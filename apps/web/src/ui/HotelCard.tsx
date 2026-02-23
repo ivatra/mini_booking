@@ -1,4 +1,4 @@
-import { Badge, Card, Group, Stack, Text, Title } from "@mantine/core";
+import { Badge, Button, Card, Group, Stack, Text, Title } from "@mantine/core";
 
 import { pickPreviewRooms, pluralizeRu } from "../helpers";
 import type { IHotel } from "../types";
@@ -22,6 +22,7 @@ const HotelCard = ({ id, city, name, rooms, address }: IHotel) => {
             {roomsCount} {roomsWord}
           </Badge>
         </Group>
+
         <Group gap="0.4rem">
           <Text className={s.cityText}>{city},</Text>
           {address ? (
@@ -37,9 +38,19 @@ const HotelCard = ({ id, city, name, rooms, address }: IHotel) => {
           gap={8}
           className={s.roomsList}>
           {previewRooms.map((room) => (
-            <HotelCardRoomPreview {...room} />
+            <HotelCardRoomPreview
+              key={room.id}
+              {...room}
+            />
           ))}
         </Stack>
+
+        <Button
+          className={s.openRoomsButton}
+          variant="light"
+          fullWidth>
+          Перейти к номерам
+        </Button>
       </Stack>
     </Card>
   );

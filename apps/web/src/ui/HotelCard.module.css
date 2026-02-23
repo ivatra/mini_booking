@@ -37,11 +37,11 @@
   color: var(--mantine-color-dimmed);
 }
 
-.rooms_list {
+.roomsList {
   margin-top: 2px;
 }
 
-.room_item {
+.roomItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,35 +53,39 @@
   );
 }
 
-.room_meta {
+.roomMeta {
   display: flex;
   align-items: center;
   min-width: 0;
 }
 
-.room_name {
+.roomName {
   font-size: var(--mantine-font-size-sm);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.room_price {
+.roomPrice {
   font-size: var(--mantine-font-size-sm);
   font-weight: 600;
 }
 
-.status_dot {
+.statusDot {
   width: 8px;
   height: 8px;
   border-radius: 999px;
   flex: 0 0 auto;
 }
 
-.status_free {
+.statusFree {
   background-color: var(--mantine-color-green-6);
 }
 
-.status_busy {
+.statusBusy {
   background-color: var(--mantine-color-red-6);
+}
+
+.openRoomsButton {
+  margin-top: var(--mantine-spacing-xs);
 }
