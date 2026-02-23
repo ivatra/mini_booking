@@ -5,8 +5,8 @@ import RoomsPageHeader from "../ui/RoomsPageHeader";
 const paperProps: PaperProps = {
   h: "100%",
   w: "100%",
-  bg: "blue",
   radius: "md",
+  bg: "inherit",
 };
 
 const RoomsPage = () => {
