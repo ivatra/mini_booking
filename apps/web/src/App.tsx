@@ -1,10 +1,10 @@
-import RoomsPage from "./pages/RoomsPage";
+import HotelRoomsPage from "./pages/HotelRoomsPage";
 import Layout from "./ui/Layout";
 
 function App() {
   return (
     <Layout>
-      <RoomsPage />
+      <HotelRoomsPage />
     </Layout>
   );
 }

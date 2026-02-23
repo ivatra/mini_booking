@@ -16,10 +16,14 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <Box {...layoutWrapperProps}>
       <Paper {...layoutRootProps}>
-        <Paper {...layoutHeaderProps} component="header">
+        <Paper
+          {...layoutHeaderProps}
+          component="header">
           <Header />
         </Paper>
-        <Box {...layoutMainProps} component="main">
+        <Box
+          {...layoutMainProps}
+          component="main">
           {children}
         </Box>
       </Paper>

@@ -27,7 +27,10 @@ const Header = () => {
   return (
     <Group {...headerGroupProps}>
       <Group gap="xs">
-        <IconBuilding size={22} style={{ color: iconColor }} />
+        <IconBuilding
+          size={22}
+          style={{ color: iconColor }}
+        />
         <Title order={4}>MiniBooking</Title>
       </Group>
       <Group gap="sm">
@@ -37,7 +40,10 @@ const Header = () => {
           openDelay={150}
           label="Нажмите чтобы обновить подписку на обновление">
           <ActionIcon {...actionIconProps}>
-            <IconRefresh size={18} aria-hidden="true" />
+            <IconRefresh
+              size={18}
+              aria-hidden="true"
+            />
           </ActionIcon>
         </Tooltip>
       </Group>
