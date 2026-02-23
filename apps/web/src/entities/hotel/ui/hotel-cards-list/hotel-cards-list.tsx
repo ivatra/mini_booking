@@ -1,8 +1,8 @@
 import { Box, Paper } from "@mantine/core";
+import { MOCK_HOTELS } from "@shared";
 
-import { mockHotels } from "../mockData";
-import HotelCard from "./HotelCard";
-import s from "./HotelCardsList.module.css";
+import HotelCard from "./hotel-card/hotel-card";
+import s from "./hotel-cards-list.module.css";
 
 const HotelCardsList = () => {
   return (
@@ -10,7 +10,7 @@ const HotelCardsList = () => {
       <Paper
         className={s.grid}
         component="section">
-        {mockHotels.map((hotel) => (
+        {MOCK_HOTELS.map((hotel) => (
           <HotelCard
             key={hotel.id}
             {...hotel}

@@ -7,6 +7,5 @@
   "bracketSameLine": true,
   "tabWidth": 2,
   "singleAttributePerLine": true,
-  "useTabs": false,
-  "plugins": ["prettier-plugin-organize-imports"]
+  "useTabs": false
 }

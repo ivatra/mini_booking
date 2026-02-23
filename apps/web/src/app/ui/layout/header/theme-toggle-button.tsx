@@ -1,15 +1,17 @@
-import { ActionIcon, useMantineColorScheme } from "@mantine/core";
+import {
+  ActionIcon,
+  useMantineColorScheme,
+  type ActionIconProps,
+} from "@mantine/core";
 import { IconMoon, IconSun } from "@tabler/icons-react";
 
-import type { TActionIconProps } from "../types";
-
-const iconProps: TActionIconProps = {
+const iconProps: ActionIconProps = {
   variant: "default",
   radius: "md",
   size: "lg",
 };
 
-export function ThemeToggle() {
+const ThemeToggleButton = () => {
   const { colorScheme, setColorScheme } = useMantineColorScheme();
 
   const isDark = colorScheme === "dark";
@@ -24,4 +26,6 @@ export function ThemeToggle() {
       {isDark ? <IconSun size={18} /> : <IconMoon size={18} />}
     </ActionIcon>
   );
-}
+};
+
+export default ThemeToggleButton;

@@ -6,6 +6,8 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import { defineConfig, globalIgnores } from "eslint/config";
 import globals from "globals";
 import tseslint from "typescript-eslint";
+import unusedImports from "eslint-plugin-unused-imports";
+
 export default defineConfig([
   globalIgnores(["dist"]),
   {
@@ -23,8 +25,10 @@ export default defineConfig([
 
     plugins: {
       import: importPlugin,
+      "unused-imports": unusedImports,
     },
     rules: {
+      "unused-imports/no-unused-imports": "error",
       "padding-line-between-statements": [
         "warn",
         { blankLine: "always", prev: "import", next: "*" },
@@ -54,6 +58,31 @@ export default defineConfig([
       "@typescript-eslint/consistent-type-imports": [
         "warn",
         { prefer: "type-imports", fixStyle: "inline-type-imports" },
+      ],
+
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            "@pages/*/*",
+            "@entities/*/*",
+            "@shared/*/*",
+
+            "../pages/*/*",
+            "../../pages/*/*",
+            "../../../pages/*/*",
+
+            "../entities/*/*",
+            "../../entities/*/*",
+            "../../../entities/*/*",
+
+            "../shared/*/*",
+            "../../shared/*/*",
+            "../../../shared/*/*",
+
+            "src/*",
+          ],
+        },
       ],
 
       "no-trailing-spaces": "warn",
