@@ -43,16 +43,3 @@
   font-weight: 600;
   line-height: 1.2;
 }
-
-.m__date-input {
-  border-radius: var(--mantine-radius-md);
-}
-
-.m__add-button {
-  border-radius: var(--mantine-radius-md);
-  padding-inline: var(--mantine-spacing-lg);
-}
-
-.m_add-button_label {
-  white-space: normal;
-}
