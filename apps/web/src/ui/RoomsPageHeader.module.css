@@ -55,5 +55,8 @@
 .m__add-button {
   border-radius: var(--mantine-radius-md);
   padding-inline: var(--mantine-spacing-lg);
-  white-space: nowrap;
+}
+
+.m_add-button_label {
+  white-space: normal;
 }

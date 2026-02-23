@@ -34,7 +34,11 @@ const RoomsPageHeader = () => {
             />
           </Stack>
 
-          <Button className={classes.mAddButton}>Добавить бронь</Button>
+          <Button
+            className={classes.mAddButton}
+            classNames={{ label: classes.mAddButtonLabel }}>
+            Добавить бронь
+          </Button>
         </Group>
       </Group>
     </Paper>
