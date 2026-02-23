@@ -1,4 +1,5 @@
 import { Badge, Button, Card, Group, Stack, Text, Title } from "@mantine/core";
+import { Link } from "react-router-dom";
 
 import { pluralizeRu } from "../helpers";
 import type { IHotel } from "../types";
@@ -35,7 +36,9 @@ const HotelCard = ({ id, city, name, rooms, address }: IHotel) => {
         <Button
           className={s.openRoomsButton}
           variant="light"
-          fullWidth>
+          fullWidth
+          component={Link}
+          to={`/${id}`}>
           Перейти к номерам
         </Button>
       </Stack>
