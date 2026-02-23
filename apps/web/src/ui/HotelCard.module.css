@@ -3,7 +3,6 @@
   border-radius: var(--mantine-radius-md);
   padding: var(--mantine-spacing-md);
   background-color: var(--mantine-color-body);
-  cursor: pointer;
   transition:
     transform 120ms ease,
     box-shadow 120ms ease;
