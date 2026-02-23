@@ -4,7 +4,7 @@ export const layoutWrapperProps: BoxProps = {
   style: {
     padding: "var(--mantine-spacing-lg)",
     background:
-      "light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-8)",
+      "light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-8))",
     scrollbarGutter: "stable",
     height: "100dvh",
     width: "100dvw",
