@@ -1,16 +1,19 @@
 import { Box, Paper } from "@mantine/core";
-import { MOCK_HOTELS } from "@shared";
 
 import HotelCard from "./hotel-card/hotel-card";
 import s from "./hotel-cards-list.module.css";
+import type { IHotel } from "../../data/types";
 
-const HotelCardsList = () => {
+interface IProps {
+  hotels: IHotel[];
+}
+const HotelCardsList = ({ hotels }: IProps) => {
   return (
     <Box className={s.scrollWrapper}>
       <Paper
         className={s.grid}
         component="section">
-        {MOCK_HOTELS.map((hotel) => (
+        {hotels.map((hotel) => (
           <HotelCard
             key={hotel.id}
             {...hotel}
