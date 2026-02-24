@@ -1,22 +1,20 @@
 ﻿import { RoomCard } from "@entities";
 import { Group, Stack, Title } from "@mantine/core";
-import { GridList, MOCK_HOTELS, MOCK_ROOMS } from "@shared";
-import { useParams } from "react-router";
+import { GridList } from "@shared";
 
 import BookingDatePicker from "./booking-date-picker";
 import s from "./details-page.module.css";
+import useDetailsPage from "./useDetailsPage";
 
 const DetailsPage = () => {
-  const { numId } = useParams<{ numId: string }>();
-  const hotel = MOCK_HOTELS.find((v) => v.id === numId);
-  const rooms = MOCK_ROOMS.filter((v) => v.hotelId === numId);
+  const { date, hotel, rooms, setDate } = useDetailsPage();
 
   if (!hotel || !rooms.length) {
     return (
       <Title
         order={3}
         c="red">
-        Не найден отель/ комнаты для этого отеля
+        Не найден отель / комнаты для этого отеля
       </Title>
     );
   }
@@ -29,7 +27,10 @@ const DetailsPage = () => {
           className={s.hotelTitle}>
           Отель {hotel?.name}
         </Title>
-        <BookingDatePicker />
+        <BookingDatePicker
+          value={date}
+          onChange={setDate}
+        />
       </Group>
 
       <GridList>

@@ -1,25 +1,25 @@
 import { Stack, Text } from "@mantine/core";
-import { DatePickerInput } from "@mantine/dates";
-// .m__date {
-//   display: flex;
-//   flex-direction: column;
-//   gap: 4px;
-// }
+import {
+  DatePickerInput,
+  type DatesRangeValue,
+  type DateValue,
+} from "@mantine/dates";
 
-// .m__date-label {
-//   font-size: var(--mantine-font-size-sm);
-//   font-weight: 600;
-//   line-height: 1.2;
-// }
-const BookingDatePicker = () => (
+interface IProps {
+  value: DatesRangeValue<DateValue>;
+  onChange: (v: DatesRangeValue<DateValue>) => void;
+}
+
+const BookingDatePicker = ({ value, onChange }: IProps) => (
   <Stack gap="xs">
     <Text>Выберите дату брони</Text>
     <DatePickerInput
       size="md"
-      aria-label="Выберите диапазон дат"
+      aria-label="Выберите дату брони"
       type="range"
-      value={["2026-02-04", "2026-03-01"]}
       clearable
+      value={value}
+      onChange={onChange}
       radius="md"
       valueFormat="DD.MM.YY"
     />
