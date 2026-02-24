@@ -12,7 +12,7 @@ import { DatePickerInput } from "@mantine/dates";
 //   line-height: 1.2;
 // }
 const BookingDatePicker = () => (
-  <Stack>
+  <Stack gap="xs">
     <Text>Выберите дату брони</Text>
     <DatePickerInput
       size="md"

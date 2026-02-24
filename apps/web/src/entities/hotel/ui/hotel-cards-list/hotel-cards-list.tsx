@@ -1,27 +1,21 @@
-import { Box, Paper } from "@mantine/core";
+import { GridList } from "@shared";
 
 import HotelCard from "./hotel-card/hotel-card";
-import s from "./hotel-cards-list.module.css";
 import type { IHotel } from "../../data/types";
 
 interface IProps {
   hotels: IHotel[];
 }
-const HotelCardsList = ({ hotels }: IProps) => {
-  return (
-    <Box className={s.scrollWrapper}>
-      <Paper
-        className={s.grid}
-        component="section">
-        {hotels.map((hotel) => (
-          <HotelCard
-            key={hotel.id}
-            {...hotel}
-          />
-        ))}
-      </Paper>
-    </Box>
-  );
-};
+
+const HotelCardsList = ({ hotels }: IProps) => (
+  <GridList>
+    {hotels.map((hotel) => (
+      <HotelCard
+        key={hotel.id}
+        {...hotel}
+      />
+    ))}
+  </GridList>
+);
 
 export default HotelCardsList;

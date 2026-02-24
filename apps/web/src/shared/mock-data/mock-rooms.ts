@@ -23,6 +23,13 @@ export const MOCK_ROOMS: IRoom[] = [
     pricePerNight: 5200,
   },
   {
+    id: "room-104",
+    hotelId: "hotel-1",
+    name: "103",
+    capacity: 1,
+    pricePerNight: 5200,
+  },
+  {
     id: "room-201",
     hotelId: "hotel-2",
     name: "201",

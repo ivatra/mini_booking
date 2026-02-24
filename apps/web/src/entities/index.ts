@@ -1,3 +1,5 @@
+export { RoomCard } from "./room";
+
 export { HotelCardsList } from "./hotel";
 
 export type { IHotel } from "./hotel";
