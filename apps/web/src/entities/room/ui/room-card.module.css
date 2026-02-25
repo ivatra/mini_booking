@@ -1,7 +1,7 @@
 ﻿.room_card {
   border: 1px solid light-dark(#d7dde8, #353c49);
   border-radius: var(--mantine-radius-md);
-  background: light-dark(#ffffff, #1a2130);
+  background-color: var(--mantine-color-body);
   padding: var(--mantine-spacing-md);
   transition:
     transform 140ms ease,
