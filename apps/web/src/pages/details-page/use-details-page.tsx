@@ -1,7 +1,6 @@
-import { useRooms } from "@entities";
-import type { DatesRangeValue, DateValue } from "@mantine/dates";
+import { useDateRangeStore, useRooms } from "@entities";
 import { MOCK_HOTELS } from "@shared";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import { getGetRoomsParams, getIsUiRangeValid } from "./helpers";
@@ -12,7 +11,7 @@ const useDetailsPage = () => {
 
   const hotel = MOCK_HOTELS.find((v) => v.id === hotelId);
 
-  const [date, setDate] = useState<DatesRangeValue<DateValue>>([null, null]);
+  const { date, setDate } = useDateRangeStore();
 
   useEffect(() => {
     if (!hotelId) return;

@@ -1,3 +1,5 @@
+export { default as useDateRangeStore } from "./data/date-range-store";
+
 export { useRooms } from "./data/store";
 export { useRoom } from "./data/use-room";
 
