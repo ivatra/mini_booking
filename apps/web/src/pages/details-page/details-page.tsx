@@ -1,23 +1,22 @@
 ﻿import { RoomCard } from "@entities";
 import { Group, Stack, Title } from "@mantine/core";
-import { GridList } from "@shared";
+import { CenterLoader, ErrorMessage, GridList } from "@shared";
 
 import BookingDatePicker from "./booking-date-picker";
 import s from "./details-page.module.css";
-import useDetailsPage from "./useDetailsPage";
+import useDetailsPage from "./use-details-page";
 
 const DetailsPage = () => {
-  const { date, hotel, rooms, setDate } = useDetailsPage();
+  const { date, hotel, rooms, loading, error, setDate } = useDetailsPage();
 
-  if (!hotel || !rooms.length) {
+  if (loading) return <CenterLoader />;
+
+  if (error) return <ErrorMessage message={error} />;
+
+  if (!hotel || !rooms.length)
     return (
-      <Title
-        order={3}
-        c="red">
-        Не найден отель / комнаты для этого отеля
-      </Title>
+      <ErrorMessage message=" Не найден отель / комнаты для этого отеля" />
     );
-  }
 
   return (
     <Stack className={s.pageWrap}>
@@ -25,7 +24,7 @@ const DetailsPage = () => {
         <Title
           order={2}
           className={s.hotelTitle}>
-          Отель {hotel?.name}
+          Отель {hotel.name}
         </Title>
         <BookingDatePicker
           value={date}
@@ -38,7 +37,7 @@ const DetailsPage = () => {
           <RoomCard
             key={room.id}
             room={room}
-            hasAvaliableDates
+            hasAvaliableBooking={room.hasAvaliableBooking}
           />
         ))}
       </GridList>

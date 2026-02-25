@@ -1,6 +1,6 @@
 ﻿import type { IRoom } from "@entities";
 
-export const MOCK_ROOMS: IRoom[] = [
+export const MOCK_ROOMS: Omit<IRoom, "hasAvaliableBooking">[] = [
   {
     id: "room-101",
     hotelId: "hotel-1",

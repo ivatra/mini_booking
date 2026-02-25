@@ -5,11 +5,11 @@ import s from "./room-card.module.css";
 
 interface IProps {
   room: IRoom;
-  hasAvaliableDates: boolean;
+  hasAvaliableBooking: boolean;
 }
 
-const RoomCard = ({ room, hasAvaliableDates }: IProps) => {
-  const statusClassName = hasAvaliableDates ? s.statusFree : s.statusBusy;
+const RoomCard = ({ room, hasAvaliableBooking }: IProps) => {
+  const statusClassName = hasAvaliableBooking ? s.statusFree : s.statusBusy;
 
   return (
     <Stack className={s.roomCard}>
@@ -24,7 +24,7 @@ const RoomCard = ({ room, hasAvaliableDates }: IProps) => {
         </Group>
 
         <Text className={`${s.roomStatus} ${statusClassName}`}>
-          {hasAvaliableDates ? "Свободен" : "Занят"}
+          {hasAvaliableBooking ? "Свободен" : "Занят"}
         </Text>
       </Group>
 
@@ -33,7 +33,7 @@ const RoomCard = ({ room, hasAvaliableDates }: IProps) => {
       <Button
         className={s.bookButton}
         variant="light"
-        disabled={!hasAvaliableDates}
+        disabled={!hasAvaliableBooking}
         fullWidth>
         Забронировать комнату
       </Button>

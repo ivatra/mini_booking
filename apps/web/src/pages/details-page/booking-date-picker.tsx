@@ -14,8 +14,9 @@ const BookingDatePicker = ({ value, onChange }: IProps) => (
   <Stack gap="xs">
     <Text>Выберите дату брони</Text>
     <DatePickerInput
+      allowSingleDateInRange={false}
       size="md"
-      aria-label="Выберите дату брони"
+      placeholder="Ввод"
       type="range"
       clearable
       value={value}
