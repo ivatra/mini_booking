@@ -1,15 +1,6 @@
-import { MOCK_BOOKING, MOCK_ROOMS } from "@shared";
+import { isRangeOverlap, MOCK_BOOKING, MOCK_ROOMS } from "@shared";
 
 import type { IApi } from "./types";
-
-const isRangeOverlap = (
-  userIn: string,
-  userOut: string,
-  bookingIn: string,
-  bookingOut: string,
-): boolean =>
-  new Date(bookingIn) <= new Date(userIn) &&
-  new Date(bookingOut) >= new Date(userOut);
 
 export const api: IApi = {
   getRooms: async (params) => {

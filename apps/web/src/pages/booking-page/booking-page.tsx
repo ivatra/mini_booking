@@ -2,12 +2,13 @@ import { BookingCard, useBookings, useRoom } from "@entities";
 import { Group, Stack, Text, Title } from "@mantine/core";
 import { CenterLoader, ErrorMessage, GridList } from "@shared";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 
 import s from "./booking-page.module.css";
 
 const BookingPage = () => {
   const { roomId } = useParams<{ roomId: string }>();
+  const [searchParams] = useSearchParams();
   const { bookings, loading, error, getBookings } = useBookings();
   const { room, loading: roomLoading, error: roomError, getRoom } = useRoom();
 
@@ -15,8 +16,15 @@ const BookingPage = () => {
     if (!roomId) return;
 
     getRoom(roomId);
-    getBookings({ roomId });
-  }, [roomId, getRoom, getBookings]);
+
+    const checkIn = searchParams.get("in");
+    const checkOut = searchParams.get("out");
+
+    getBookings({
+      roomId,
+      date: checkIn && checkOut ? { checkIn, checkOut } : undefined,
+    });
+  }, [roomId, getRoom, getBookings, searchParams]);
 
   if (roomLoading || loading) return <CenterLoader />;
 

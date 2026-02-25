@@ -1,10 +1,15 @@
-import { MOCK_BOOKING } from "@shared";
+import { isRangeOverlap, MOCK_BOOKING } from "@shared";
 
 import type { IApi } from "./types";
 
 export const api: IApi = {
-  getBookings: async ({ roomId }) => {
-    const bookings = MOCK_BOOKING.filter((b) => b.roomId === roomId);
+  getBookings: async ({ roomId, date }) => {
+    const bookings = MOCK_BOOKING.filter((b) => {
+      if (b.roomId !== roomId) return false;
+      if (!date) return true;
+
+      return isRangeOverlap(date.checkIn, date.checkOut, b.checkIn, b.checkOut);
+    });
 
     await new Promise((resolve) => setTimeout(resolve, 250));
 

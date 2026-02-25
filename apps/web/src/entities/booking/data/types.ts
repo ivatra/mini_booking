@@ -10,6 +10,10 @@ export interface IBooking {
 
 export interface IGetBookingsParams {
   roomId: string;
+  date?: {
+    checkIn: string;
+    checkOut: string;
+  };
 }
 
 export interface IBookingsState {
