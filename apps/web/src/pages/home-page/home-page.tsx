@@ -1,20 +1,33 @@
-import { HotelCardsList } from "@entities";
+import { HotelCardsList, useHotels } from "@entities";
 import { Box, Stack } from "@mantine/core";
-import { MOCK_HOTELS, MOCK_ROOMS } from "@shared";
+import { CenterLoader, ErrorMessage } from "@shared";
+import { useEffect } from "react";
 
 import Header from "./header";
+import { calcCountOfRooms } from "./helpers";
 
 const HomePage = () => {
+  const { hotels, loading, error, getHotels } = useHotels();
+
+  useEffect(() => {
+    getHotels();
+  }, [getHotels]);
+
   return (
     <Box
       h="100%"
       w="100%">
       <Stack>
         <Header
-          cOfHotels={MOCK_HOTELS.length}
-          cOfRooms={MOCK_ROOMS.length}
+          cOfHotels={hotels.length}
+          cOfRooms={calcCountOfRooms(hotels)}
         />
-        <HotelCardsList hotels={MOCK_HOTELS} />
+        {loading > 0 && <CenterLoader />}
+        {error && <ErrorMessage message={error} />}
+        {!loading && !error && <HotelCardsList hotels={hotels} />}
+        {!loading && !hotels.length && (
+          <ErrorMessage message="Не найдены отели" />
+        )}
       </Stack>
     </Box>
   );

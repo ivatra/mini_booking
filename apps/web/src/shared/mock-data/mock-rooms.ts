@@ -25,7 +25,7 @@ export const MOCK_ROOMS: Omit<IRoom, "hasAvaliableBooking">[] = [
   {
     id: "room-104",
     hotelId: "hotel-1",
-    name: "103",
+    name: "104",
     capacity: 1,
     pricePerNight: 5200,
   },

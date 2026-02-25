@@ -5,3 +5,15 @@ export interface IHotel {
   address?: string;
   roomsLength: number;
 }
+
+export interface IHotelsState {
+  hotels: IHotel[];
+  loading: number;
+  error: string | null;
+
+  getHotels: () => Promise<void>;
+}
+
+export interface IApi {
+  getHotels: () => Promise<IHotel[]>;
+}

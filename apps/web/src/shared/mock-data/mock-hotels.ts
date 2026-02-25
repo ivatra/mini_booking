@@ -6,7 +6,7 @@ export const MOCK_HOTELS: IHotel[] = [
     name: "Aurora Hotel",
     city: "Moscow",
     address: "Tverskaya, 10",
-    roomsLength: 3,
+    roomsLength: 4,
   },
   {
     id: "hotel-2",
