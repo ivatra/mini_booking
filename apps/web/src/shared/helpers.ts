@@ -13,3 +13,15 @@ export function pluralizeRu(
 
   return many;
 }
+
+export function getEnvVar<K extends keyof ImportMetaEnv>(
+  key: K,
+): ImportMetaEnv[K] {
+  const value = import.meta.env[key];
+
+  if (value === undefined) {
+    throw new Error(`Missing env var: ${String(key)}`);
+  }
+
+  return value;
+}
