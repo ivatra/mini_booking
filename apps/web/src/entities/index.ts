@@ -4,4 +4,5 @@ export type { IRoom, IGetRoomsParams } from "./room";
 export { HotelCardsList, useHotels } from "./hotel";
 export type { IHotel } from "./hotel";
 
-export type { IBooking } from "./booking";
+export { useBookings, BookingCard } from "./booking";
+export type { IBooking, IGetBookingsParams } from "./booking";
