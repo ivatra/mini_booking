@@ -3,6 +3,8 @@ import { DatePickerInput } from "@mantine/dates";
 
 import s from "./create-booking-modal.module.css";
 import useCreateBookingModal from "./use-create-booking-modal";
+import { STATUS_OPTIONS } from "../data/helpers";
+import type { TBookingStatus } from "../data/types";
 
 interface IProps {
   opened: boolean;
@@ -16,6 +18,8 @@ const CreateBookingModal = ({ opened, onClose }: IProps) => {
     loading,
     hotelId,
     roomId,
+    status,
+    setStatus,
     setDates,
     setRoomId,
     onHotelIdChange,
@@ -52,13 +56,21 @@ const CreateBookingModal = ({ opened, onClose }: IProps) => {
         />
 
         <DatePickerInput
+          minDate={new Date()}
           type="range"
           label="Даты проживания"
           placeholder="Выберите даты"
           value={dates}
           onChange={setDates}
         />
-
+        <Select
+          label="Статус"
+          placeholder="Выберите статус"
+          defaultValue={STATUS_OPTIONS[0].value}
+          data={STATUS_OPTIONS}
+          value={status}
+          onChange={(val) => setStatus(val as TBookingStatus)}
+        />
         {error && (
           <Text
             size="md"

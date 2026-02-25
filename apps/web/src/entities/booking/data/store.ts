@@ -71,4 +71,23 @@ export const useBookings = create<IBookingsState>((set) => ({
       }
     }
   },
+  createBooking: async (params) => {
+    try {
+      const newBooking = await api.createBooking(params);
+
+      set((st) => ({
+        bookings: [...st.bookings, newBooking],
+      }));
+
+      return newBooking;
+    } catch (e) {
+      if (getEnvVar("DEV")) {
+        console.warn(
+          e instanceof Error ? e.message : "Не удалось создать бронирование",
+        );
+      }
+
+      throw e;
+    }
+  },
 }));

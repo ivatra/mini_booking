@@ -1,6 +1,7 @@
 import { isRangeOverlap, MOCK_BOOKING } from "@shared";
 
-import type { IApi } from "./types";
+import { generateId } from "./helpers";
+import type { IApi, IBooking } from "./types";
 
 export const api: IApi = {
   getBookings: async ({ roomId, date }) => {
@@ -31,5 +32,22 @@ export const api: IApi = {
 
     booking.status = "avaliable";
     await new Promise((resolve) => setTimeout(resolve, 300));
+  },
+
+  createBooking: async ({ roomId, checkIn, checkOut, status }) => {
+    const newBooking: IBooking = {
+      id: generateId(),
+      roomId,
+      checkIn,
+      checkOut,
+      status,
+      createdAt: new Date().toISOString(),
+    };
+
+    MOCK_BOOKING.push(newBooking);
+
+    await new Promise((resolve) => setTimeout(resolve, 300));
+
+    return newBooking;
   },
 };

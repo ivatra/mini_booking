@@ -15,6 +15,12 @@ export interface IGetBookingsParams {
     checkOut: string;
   };
 }
+export interface ICreateBookingParams {
+  roomId: string;
+  checkIn: string;
+  checkOut: string;
+  status: TBookingStatus;
+}
 
 export interface IBookingsState {
   bookings: IBooking[];
@@ -25,12 +31,18 @@ export interface IBookingsState {
 
   book: (bookingId: string) => Promise<void>;
   cancelBook: (bookingId: string) => Promise<void>;
+
+  createBooking: (params: ICreateBookingParams) => Promise<IBooking>;
 }
 
 export interface IApi {
   getBookings: (params: IGetBookingsParams) => Promise<IBooking[]>;
+
   book: (bookingId: string) => Promise<void>;
+
   cancelBook: (bookingId: string) => Promise<void>;
+
+  createBooking: (params: ICreateBookingParams) => Promise<IBooking>;
 }
 
 export interface CreateBookingModalStore {
