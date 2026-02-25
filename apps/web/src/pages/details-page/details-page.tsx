@@ -4,6 +4,7 @@ import { CenterLoader, ErrorMessage, GridList } from "@shared";
 
 import BookingDatePicker from "./booking-date-picker";
 import s from "./details-page.module.css";
+import { buildRoomLink } from "./helpers";
 import useDetailsPage from "./use-details-page";
 
 const DetailsPage = () => {
@@ -38,6 +39,7 @@ const DetailsPage = () => {
             key={room.id}
             room={room}
             hasAvaliableBooking={room.hasAvaliableBooking}
+            navigateOnClickTo={buildRoomLink(room.id, date)}
           />
         ))}
       </GridList>

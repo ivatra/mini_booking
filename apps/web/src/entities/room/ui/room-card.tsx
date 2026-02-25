@@ -7,9 +7,10 @@ import s from "./room-card.module.css";
 interface IProps {
   room: IRoom;
   hasAvaliableBooking: boolean;
+  navigateOnClickTo: string;
 }
 
-const RoomCard = ({ room, hasAvaliableBooking }: IProps) => {
+const RoomCard = ({ room, hasAvaliableBooking, navigateOnClickTo }: IProps) => {
   const statusClassName = hasAvaliableBooking ? s.statusFree : s.statusBusy;
 
   return (
@@ -33,7 +34,7 @@ const RoomCard = ({ room, hasAvaliableBooking }: IProps) => {
 
       <NavigateButton
         text="Забронировать номер"
-        goTo={`/rooms/${room.id}`}
+        goTo={navigateOnClickTo}
       />
     </Stack>
   );
