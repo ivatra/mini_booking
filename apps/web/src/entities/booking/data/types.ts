@@ -5,7 +5,6 @@ export interface IBooking {
   checkIn: string;
   checkOut: string;
   status: TBookingStatus;
-  guestName?: string;
   createdAt: string;
 }
 

@@ -43,11 +43,6 @@
   color: var(--mantine-color-red-6);
 }
 
-.booking_guest {
-  font-size: var(--mantine-font-size-sm);
-  color: light-dark(var(--mantine-color-dark-3), var(--mantine-color-gray-5));
-}
-
 .booking_created {
   font-size: var(--mantine-font-size-xs);
   color: light-dark(var(--mantine-color-dark-2), var(--mantine-color-gray-6));

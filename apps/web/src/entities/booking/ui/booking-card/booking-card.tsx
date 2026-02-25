@@ -35,10 +35,6 @@ const BookingCard = ({ booking }: IProps) => {
         </Text>
       </Group>
 
-      {booking.guestName && (
-        <Text className={s.booking_guest}>Гость: {booking.guestName}</Text>
-      )}
-
       <Text className={s.booking_created}>
         Создано: {formatDate(booking.createdAt)}
       </Text>
