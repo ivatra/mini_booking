@@ -10,26 +10,31 @@ export const api: IApi = {
 
     await new Promise((resolve) => setTimeout(resolve, 250));
 
-    return rooms.map((room) => {
-      const hasAvaliableBooking = MOCK_BOOKING.some((booking) => {
-        if (booking.roomId !== room.id || booking.status === "busy")
-          return false;
+    return rooms
+      .map((room) => {
+        const hasAvaliableBooking = MOCK_BOOKING.some((booking) => {
+          if (booking.roomId !== room.id || booking.status === "busy")
+            return false;
 
-        if (!range) return true;
+          if (!range) return true;
 
-        return isRangeOverlap(
-          range.checkIn,
-          range.checkOut,
-          booking.checkIn,
-          booking.checkOut,
-        );
+          return isRangeOverlap(
+            range.checkIn,
+            range.checkOut,
+            booking.checkIn,
+            booking.checkOut,
+          );
+        });
+
+        return {
+          ...room,
+          hasAvaliableBooking,
+        };
+      })
+      .sort((a, b) => {
+        // Свободные комнаты первыми
+        return Number(b.hasAvaliableBooking) - Number(a.hasAvaliableBooking);
       });
-
-      return {
-        ...room,
-        hasAvaliableBooking,
-      };
-    });
   },
   getRoomById: async (id) => {
     const room = MOCK_ROOMS.find((r) => r.id === id);
