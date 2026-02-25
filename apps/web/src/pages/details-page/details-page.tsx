@@ -19,6 +19,8 @@ const DetailsPage = () => {
       <ErrorMessage message=" Не найден отель / комнаты для этого отеля" />
     );
 
+  const isEditMode = !(date[0] && date[1]);
+
   return (
     <Stack className={s.pageWrap}>
       <Group gap="xl">
@@ -40,6 +42,7 @@ const DetailsPage = () => {
             room={room}
             hasAvaliableBooking={room.hasAvaliableBooking}
             navigateOnClickTo={buildRoomLink(room.id, date)}
+            isEditMode={isEditMode}
           />
         ))}
       </GridList>

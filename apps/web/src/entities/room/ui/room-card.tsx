@@ -8,9 +8,15 @@ interface IProps {
   room: IRoom;
   hasAvaliableBooking: boolean;
   navigateOnClickTo: string;
+  isEditMode: boolean;
 }
 
-const RoomCard = ({ room, hasAvaliableBooking, navigateOnClickTo }: IProps) => {
+const RoomCard = ({
+  room,
+  hasAvaliableBooking,
+  navigateOnClickTo,
+  isEditMode,
+}: IProps) => {
   const statusClassName = hasAvaliableBooking ? s.statusFree : s.statusBusy;
 
   return (
@@ -33,8 +39,9 @@ const RoomCard = ({ room, hasAvaliableBooking, navigateOnClickTo }: IProps) => {
       <Text className={s.roomPrice}>{room.pricePerNight} руб за ночь</Text>
 
       <NavigateButton
-        text="Забронировать номер"
+        text={isEditMode ? "Оформить/отменить бронь" : "Оформить бронь"}
         goTo={navigateOnClickTo}
+        disabled={!isEditMode && !hasAvaliableBooking}
       />
     </Stack>
   );

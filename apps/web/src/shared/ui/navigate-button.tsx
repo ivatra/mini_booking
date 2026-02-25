@@ -1,18 +1,24 @@
 import { Button } from "@mantine/core";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface IProps {
   text: string;
   goTo: string;
+  disabled?: boolean;
 }
-const NavigateButton = ({ text, goTo }: IProps) => (
-  <Button
-    variant="light"
-    fullWidth
-    component={Link}
-    to={goTo}>
-    {text}
-  </Button>
-);
+
+const NavigateButton = ({ text, goTo, disabled }: IProps) => {
+  const navigate = useNavigate();
+
+  return (
+    <Button
+      disabled={disabled}
+      variant="light"
+      fullWidth
+      onClick={() => !disabled && navigate(goTo)}>
+      {text}
+    </Button>
+  );
+};
 
 export default NavigateButton;
