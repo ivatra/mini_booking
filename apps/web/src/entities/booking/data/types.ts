@@ -1,8 +1,8 @@
 export interface IBooking {
   id: string;
   roomId: string;
-  checkIn: string; // включительно
-  checkOut: string; // не включительно
+  checkIn: string;
+  checkOut: string;
   status: "avaliable" | "busy";
   guestName?: string;
   createdAt: string;
