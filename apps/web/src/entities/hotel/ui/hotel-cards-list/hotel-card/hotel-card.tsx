@@ -21,7 +21,7 @@ const HotelCard = ({ id, city, name, address, roomsLength }: IHotel) => (
         address={address}
       />
       <NavigateButton
-        text="Перейти к номерам"
+        text="На страницу отеля"
         goTo={`/hotels/${id}`}
       />
     </Stack>
