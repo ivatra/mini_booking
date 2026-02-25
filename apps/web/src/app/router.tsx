@@ -1,4 +1,4 @@
-import { DetailsPage, HomePage } from "@pages";
+import { BookingPage, DetailsPage, HomePage } from "@pages";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import Layout from "./ui/layout/layout";
@@ -12,8 +12,12 @@ const RootRouter = () => (
           element={<HomePage />}
         />
         <Route
-          path="/:numId"
+          path="/hotels/:hotelId"
           element={<DetailsPage />}
+        />
+        <Route
+          path="/rooms/:roomId"
+          element={<BookingPage />}
         />
         <Route
           path="*"

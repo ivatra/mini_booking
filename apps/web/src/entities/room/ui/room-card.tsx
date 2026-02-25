@@ -1,5 +1,6 @@
 ﻿import type { IRoom } from "@entities";
-import { Button, Group, Stack, Text, Title } from "@mantine/core";
+import { Group, Stack, Text, Title } from "@mantine/core";
+import { NavigateButton } from "@shared";
 
 import s from "./room-card.module.css";
 
@@ -30,13 +31,10 @@ const RoomCard = ({ room, hasAvaliableBooking }: IProps) => {
 
       <Text className={s.roomPrice}>{room.pricePerNight} руб за ночь</Text>
 
-      <Button
-        className={s.bookButton}
-        variant="light"
-        disabled={!hasAvaliableBooking}
-        fullWidth>
-        Забронировать комнату
-      </Button>
+      <NavigateButton
+        text="Забронировать номер"
+        goTo={`/rooms/${room.id}`}
+      />
     </Stack>
   );
 };

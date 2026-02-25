@@ -83,7 +83,3 @@
 .statusBusy {
   background-color: var(--mantine-color-red-6);
 }
-
-.openRoomsButton {
-  margin-top: var(--mantine-spacing-xs);
-}

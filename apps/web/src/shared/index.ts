@@ -1,4 +1,6 @@
-﻿export { default as ErrorMessage } from "./ui/error-message";
+﻿export { default as NavigateButton } from "./ui/navigate-button";
+
+export { default as ErrorMessage } from "./ui/error-message";
 
 export { default as CenterLoader } from "./ui/center-loader";
 

@@ -7,22 +7,22 @@ import { useParams } from "react-router-dom";
 import { getGetRoomsParams, getIsUiRangeValid } from "./helpers";
 
 const useDetailsPage = () => {
-  const { numId } = useParams<{ numId: string }>();
+  const { hotelId } = useParams<{ hotelId: string }>();
   const { getRooms, rooms, loading, error } = useRooms();
 
-  const hotel = MOCK_HOTELS.find((v) => v.id === numId);
+  const hotel = MOCK_HOTELS.find((v) => v.id === hotelId);
 
   const [date, setDate] = useState<DatesRangeValue<DateValue>>([null, null]);
 
   useEffect(() => {
-    if (!numId) return;
+    if (!hotelId) return;
 
-    if (numId && getIsUiRangeValid(date)) {
-      const params = getGetRoomsParams({ numId, date });
+    if (hotelId && getIsUiRangeValid(date)) {
+      const params = getGetRoomsParams({ hotelId, date });
 
       getRooms(params);
     }
-  }, [numId, date, getRooms]);
+  }, [hotelId, date, getRooms]);
 
   return { hotel, rooms, date, setDate, loading, error };
 };

@@ -3,15 +3,15 @@ import type { DatesRangeValue, DateValue } from "@mantine/dates";
 import { isValidUiRange, convertDateToIso } from "@shared";
 
 type TGetRoomsStoreParams = {
-  numId: string;
+  hotelId: string;
   date: DatesRangeValue<DateValue>;
 };
 
 export const getGetRoomsParams = (paramsIn: TGetRoomsStoreParams) => {
-  const { date, numId } = paramsIn;
+  const { date, hotelId } = paramsIn;
 
   const paramsOut: IGetRoomsParams = {
-    hotelId: numId,
+    hotelId,
   };
 
   if (isValidUiRange(date)) {
