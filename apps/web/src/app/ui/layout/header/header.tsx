@@ -6,6 +6,7 @@ import Logo from "./logo";
 import NavigateBackButton from "./navigate-back-button";
 import RefreshSubscriptionButton from "./refresh-subscription-button";
 import ThemeToggleButton from "./theme-toggle-button";
+import OpenBookingModalButton from "../open-booking-modal-button";
 
 const Header = () => {
   const location = useLocation();
@@ -16,6 +17,7 @@ const Header = () => {
       <Logo />
       <Group gap="sm">
         {!isMainPage ? <NavigateBackButton /> : null}
+        <OpenBookingModalButton />
         <ThemeToggleButton />
         <RefreshSubscriptionButton />
       </Group>

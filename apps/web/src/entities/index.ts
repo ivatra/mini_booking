@@ -4,5 +4,10 @@ export type { IRoom, IGetRoomsParams } from "./room";
 export { HotelCardsList, useHotels } from "./hotel";
 export type { IHotel } from "./hotel";
 
-export { useBookings, BookingsList } from "./booking";
+export {
+  useBookings,
+  BookingsList,
+  useCreateBookingModal,
+  CreateBookingModal,
+} from "./booking";
 export type { IBooking, IGetBookingsParams } from "./booking";

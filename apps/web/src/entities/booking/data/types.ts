@@ -33,3 +33,10 @@ export interface IApi {
   book: (bookingId: string) => Promise<void>;
   cancelBook: (bookingId: string) => Promise<void>;
 }
+
+export interface CreateBookingModalStore {
+  isOpen: boolean;
+
+  openModal: () => void;
+  closeModal: () => void;
+}
