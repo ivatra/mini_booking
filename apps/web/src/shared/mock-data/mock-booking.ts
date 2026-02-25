@@ -27,7 +27,7 @@ export const MOCK_BOOKING: IBooking[] = [
   },
   {
     id: "booking-4",
-    roomId: "room-102",
+    roomId: "room-104",
     checkIn: new Date("2026-03-18").toISOString(),
     checkOut: new Date("2026-03-20").toISOString(),
     status: "avaliable",
