@@ -17,7 +17,7 @@ const useDetailsPage = () => {
   useEffect(() => {
     if (!hotelId) return;
 
-    if (hotelId && getIsUiRangeValid(date)) {
+    if (getIsUiRangeValid(date)) {
       const params = getGetRoomsParams({ hotelId, date });
 
       getRooms(params);

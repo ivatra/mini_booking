@@ -3,12 +3,13 @@ import { MOCK_BOOKING, MOCK_ROOMS } from "@shared";
 import type { IApi } from "./types";
 
 const isRangeOverlap = (
-  aStart: string,
-  aEnd: string,
-  bStart: string,
-  bEnd: string,
+  userIn: string,
+  userOut: string,
+  bookingIn: string,
+  bookingOut: string,
 ): boolean =>
-  new Date(aStart) < new Date(bEnd) && new Date(aEnd) > new Date(bStart);
+  new Date(bookingIn) <= new Date(userIn) &&
+  new Date(bookingOut) >= new Date(userOut);
 
 export const api: IApi = {
   getRooms: async (params) => {
@@ -24,6 +25,20 @@ export const api: IApi = {
           return false;
 
         if (!range) return true;
+
+        console.log(
+          room.id,
+          {
+            myRange: [range.checkIn, range.checkOut],
+            bookingRange: [booking.checkIn, booking.checkOut],
+          },
+          isRangeOverlap(
+            range.checkIn,
+            range.checkOut,
+            booking.checkIn,
+            booking.checkOut,
+          ),
+        );
 
         return isRangeOverlap(
           range.checkIn,

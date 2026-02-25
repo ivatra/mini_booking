@@ -1,7 +1,9 @@
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
+import utc from "dayjs/plugin/utc";
 
 dayjs.extend(customParseFormat);
+dayjs.extend(utc);
 
 export type TStringRange = [string, string];
 export type TIsoRange = [string, string];
@@ -21,6 +23,6 @@ export const isValidUiRange = (v: unknown): v is TStringRange =>
   isStringRange(v) && isValidUiDate(v[0]) && isValidUiDate(v[1]);
 
 export const convertDateToIso = ([from, to]: TStringRange): TIsoRange => [
-  dayjs(from, UI_DATE_FORMAT, true).toISOString(),
-  dayjs(to, UI_DATE_FORMAT, true).toISOString(),
+  dayjs.utc(from, UI_DATE_FORMAT, true).toISOString(),
+  dayjs.utc(to, UI_DATE_FORMAT, true).toISOString(),
 ];
