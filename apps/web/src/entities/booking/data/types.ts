@@ -1,9 +1,10 @@
+export type TBookingStatus = "avaliable" | "busy";
 export interface IBooking {
   id: string;
   roomId: string;
   checkIn: string;
   checkOut: string;
-  status: "avaliable" | "busy";
+  status: TBookingStatus;
   guestName?: string;
   createdAt: string;
 }
@@ -22,8 +23,13 @@ export interface IBookingsState {
   error: string | null;
 
   getBookings: (params: IGetBookingsParams) => Promise<void>;
+
+  book: (bookingId: string) => Promise<void>;
+  cancelBook: (bookingId: string) => Promise<void>;
 }
 
 export interface IApi {
   getBookings: (params: IGetBookingsParams) => Promise<IBooking[]>;
+  book: (bookingId: string) => Promise<void>;
+  cancelBook: (bookingId: string) => Promise<void>;
 }

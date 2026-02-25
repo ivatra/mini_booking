@@ -1,7 +1,8 @@
-import type { IBooking } from "@entities";
-import { Group, Stack, Text, Title } from "@mantine/core";
+import { type IBooking } from "@entities";
+import { Button, Group, Stack, Text, Title } from "@mantine/core";
 
 import s from "./booking-card.module.css";
+import { useBookingActions } from "../../data/use-booking-actions";
 
 interface IProps {
   booking: IBooking;
@@ -15,8 +16,11 @@ const formatDate = (iso: string) =>
   });
 
 const BookingCard = ({ booking }: IProps) => {
+  const { book, cancelBook, error, loading } = useBookingActions(booking.id);
   const isFree = booking.status === "avaliable";
   const statusClassName = isFree ? s.status_free : s.status_busy;
+
+  const onClick = () => (isFree ? book() : cancelBook());
 
   return (
     <Stack className={s.booking_card}>
@@ -38,6 +42,15 @@ const BookingCard = ({ booking }: IProps) => {
       <Text className={s.booking_created}>
         Создано: {formatDate(booking.createdAt)}
       </Text>
+      {error && <Text c="red"> Произошла ошибка при обработке заявки</Text>}
+      <Button
+        variant="light"
+        fullWidth
+        loading={!!loading}
+        onClick={onClick}
+        color={!isFree ? "red" : ""}>
+        {isFree ? "Забронировать" : "Отменить"}
+      </Button>
     </Stack>
   );
 };

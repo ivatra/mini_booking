@@ -15,4 +15,21 @@ export const api: IApi = {
 
     return bookings;
   },
+  book: async (bookingId: string) => {
+    const booking = MOCK_BOOKING.find((b) => b.id === bookingId);
+
+    if (!booking) throw new Error("Бронирование не найдено");
+
+    booking.status = "busy";
+    await new Promise((resolve) => setTimeout(resolve, 300));
+  },
+
+  cancelBook: async (bookingId: string) => {
+    const booking = MOCK_BOOKING.find((b) => b.id === bookingId);
+
+    if (!booking) throw new Error("Бронирование не найдено");
+
+    booking.status = "avaliable";
+    await new Promise((resolve) => setTimeout(resolve, 300));
+  },
 };

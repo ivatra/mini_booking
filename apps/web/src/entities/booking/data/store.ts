@@ -33,4 +33,42 @@ export const useBookings = create<IBookingsState>((set) => ({
       set((st) => ({ loading: st.loading - 1 }));
     }
   },
+
+  book: async (bookingId) => {
+    try {
+      await api.book(bookingId);
+
+      set((st) => ({
+        bookings: st.bookings.map((b) =>
+          b.id === bookingId ? { ...b, status: "busy" } : b,
+        ),
+      }));
+    } catch (e) {
+      if (getEnvVar("DEV")) {
+        console.warn(
+          e instanceof Error ? e.message : `Не удалось забронировать ${e}`,
+        );
+      }
+    }
+  },
+
+  cancelBook: async (bookingId) => {
+    try {
+      await api.cancelBook(bookingId);
+
+      set((st) => ({
+        bookings: st.bookings.map((b) =>
+          b.id === bookingId ? { ...b, status: "avaliable" } : b,
+        ),
+      }));
+    } catch (e) {
+      if (getEnvVar("DEV")) {
+        console.warn(
+          e instanceof Error
+            ? e.message
+            : `Не удалось отменить бронирование ${e}`,
+        );
+      }
+    }
+  },
 }));
