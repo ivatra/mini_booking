@@ -10,7 +10,7 @@ const ModalsProvider = ({ children }: IProps) => {
   return (
     <>
       <CreateBookingModal
-        closeModal={closeModal}
+        onClose={closeModal}
         opened={isOpen}
       />
       {children}

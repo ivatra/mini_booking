@@ -1,0 +1,6 @@
+.error {
+  padding: 0.5rem 0.75rem;
+  background-color: var(--mantine-color-red-0);
+  border-radius: var(--mantine-radius-md);
+  border-left: 3px solid var(--mantine-color-red-6);
+}
