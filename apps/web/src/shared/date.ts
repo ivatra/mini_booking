@@ -6,7 +6,7 @@ dayjs.extend(customParseFormat);
 export type TStringRange = [string, string];
 export type TIsoRange = [string, string];
 
-const UI_DATE_FORMAT = "YYYY.MM.DD";
+const UI_DATE_FORMAT = "YYYY-MM-DD";
 
 const isStringRange = (v: unknown): v is TStringRange =>
   Array.isArray(v) &&
