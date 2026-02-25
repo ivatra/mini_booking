@@ -46,16 +46,20 @@ const useCreateBookingModal = (onClose: () => void) => {
       setLoading(true);
       const convertedDates = convertDateToIso(dates);
 
-      await createBooking({
+      const booking = await createBooking({
         roomId,
         checkIn: convertedDates[0],
         checkOut: convertedDates[1],
         status,
       });
 
+      const params = new URLSearchParams();
+
+      params.set("highlight", booking.id);
+
       clearModalData();
       onClose();
-      navigate(`/rooms/${roomId}`);
+      navigate(`/rooms/${roomId}?${params.toString()}`);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Ошибка при бронировании");
     } finally {

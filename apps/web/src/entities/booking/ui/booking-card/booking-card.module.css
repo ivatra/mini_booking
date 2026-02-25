@@ -47,3 +47,18 @@
   font-size: var(--mantine-font-size-xs);
   color: light-dark(var(--mantine-color-dark-2), var(--mantine-color-gray-6));
 }
+
+.card_highlight {
+  border-color: var(--mantine-color-blue-4);
+  box-shadow: 0 0 6px var(--mantine-color-blue-8);
+  animation: highlightPulse 2s ease-out;
+}
+
+@keyframes highlightPulse {
+  0% {
+    box-shadow: 0 0 20px var(--mantine-color-blue-2);
+  }
+  100% {
+    box-shadow: 0 0 12px var(--mantine-color-blue-8);
+  }
+}
