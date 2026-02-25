@@ -32,4 +32,12 @@ export const useRooms = create<IRoomsState>((set) => ({
       set((st) => ({ loading: st.loading - 1 }));
     }
   },
+
+  getRoomById: async (id) => {
+    try {
+      return await api.getRoomById(id);
+    } catch {
+      return null;
+    }
+  },
 }));

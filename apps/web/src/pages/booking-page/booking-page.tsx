@@ -1,6 +1,6 @@
-import { BookingCard, useBookings } from "@entities";
+import { BookingCard, useBookings, useRoom } from "@entities";
 import { Group, Stack, Text, Title } from "@mantine/core";
-import { CenterLoader, ErrorMessage, GridList, MOCK_ROOMS } from "@shared";
+import { CenterLoader, ErrorMessage, GridList } from "@shared";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
@@ -9,15 +9,22 @@ import s from "./booking-page.module.css";
 const BookingPage = () => {
   const { roomId } = useParams<{ roomId: string }>();
   const { bookings, loading, error, getBookings } = useBookings();
-
-  const room = MOCK_ROOMS.find((r) => r.id === roomId);
+  const { room, loading: roomLoading, error: roomError, getRoom } = useRoom();
 
   useEffect(() => {
     if (!roomId) return;
+
+    getRoom(roomId);
     getBookings({ roomId });
-  }, [roomId, getBookings]);
+  }, [roomId, getRoom, getBookings]);
+
+  if (roomLoading || loading) return <CenterLoader />;
+
+  if (roomError) return <ErrorMessage message={roomError} />;
 
   if (!room) return <ErrorMessage message="Комната не найдена" />;
+
+  if (error) return <ErrorMessage message={error} />;
 
   return (
     <Stack className={s.page_wrap}>
@@ -36,19 +43,14 @@ const BookingPage = () => {
           </Group>
         </Stack>
       </Group>
-
-      {loading > 0 && <CenterLoader />}
-      {error && <ErrorMessage message={error} />}
-      {!loading && !error && (
-        <GridList>
-          {bookings.map((booking) => (
-            <BookingCard
-              key={booking.id}
-              booking={booking}
-            />
-          ))}
-        </GridList>
-      )}
+      <GridList>
+        {bookings.map((booking) => (
+          <BookingCard
+            key={booking.id}
+            booking={booking}
+          />
+        ))}
+      </GridList>
     </Stack>
   );
 };

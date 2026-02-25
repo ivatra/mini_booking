@@ -39,4 +39,22 @@ export const api: IApi = {
       };
     });
   },
+  getRoomById: async (id) => {
+    const room = MOCK_ROOMS.find((r) => r.id === id);
+
+    if (!room) return null;
+
+    await new Promise((resolve) => setTimeout(resolve, 250));
+
+    const hasAvaliableBooking = MOCK_BOOKING.some((booking) => {
+      if (booking.roomId !== room.id || booking.status === "busy") return false;
+
+      return true;
+    });
+
+    return {
+      ...room,
+      hasAvaliableBooking,
+    };
+  },
 };

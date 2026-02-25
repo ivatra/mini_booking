@@ -18,8 +18,18 @@ export interface IRoomsState {
   error: string | null;
 
   getRooms: (params: IGetRoomsParams) => Promise<void>;
+  getRoomById: (id: string) => Promise<IRoom | null>;
 }
 
 export interface IApi {
   getRooms: (params: IGetRoomsParams) => Promise<IRoom[]>;
+  getRoomById: (id: string) => Promise<IRoom | null>;
+}
+
+export interface IRoomState {
+  room: IRoom | null;
+  loading: number;
+  error: string | null;
+
+  getRoom: (id: string) => Promise<void>;
 }
