@@ -19,7 +19,8 @@
 
 .header {
   border: 1px solid light-dark(#d7dde8, #343a46);
-  box-shadow: 0 4px 14px light-dark(rgba(22, 30, 46, 0.08), rgba(0, 0, 0, 0.35));
+  box-shadow: 0 4px 14px
+    light-dark(rgba(188, 194, 207, 0.08), rgba(0, 0, 0, 0.35));
 }
 
 .main {
@@ -34,4 +35,11 @@
   padding: var(--mantine-spacing-md);
   padding-left: var(--mantine-spacing-lg);
   padding-right: var(--mantine-spacing-lg);
+}
+
+.header_logo {
+  display: flex;
+  gap: var(--mantine-spacing-xs);
+  text-decoration: none;
+  color: inherit;
 }
