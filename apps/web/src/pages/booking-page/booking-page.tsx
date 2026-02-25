@@ -1,10 +1,11 @@
-import { BookingCard, useBookings, useRoom } from "@entities";
+import { BookingsList, useBookings, useRoom } from "@entities";
 import { Group, Stack, Text, Title } from "@mantine/core";
-import { CenterLoader, ErrorMessage, GridList } from "@shared";
+import { CenterLoader, ErrorMessage } from "@shared";
 import { useEffect } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 
 import s from "./booking-page.module.css";
+import BookingsNotFoundMessage from "./bookings-not-found-message";
 
 const BookingPage = () => {
   const { roomId } = useParams<{ roomId: string }>();
@@ -12,19 +13,21 @@ const BookingPage = () => {
   const { bookings, loading, error, getBookings } = useBookings();
   const { room, loading: roomLoading, error: roomError, getRoom } = useRoom();
 
+  const checkIn = searchParams.get("in");
+  const checkOut = searchParams.get("out");
+
+  const hasValidDate = !!(checkIn && checkOut);
+
   useEffect(() => {
     if (!roomId) return;
 
     getRoom(roomId);
 
-    const checkIn = searchParams.get("in");
-    const checkOut = searchParams.get("out");
-
     getBookings({
       roomId,
-      date: checkIn && checkOut ? { checkIn, checkOut } : undefined,
+      date: hasValidDate ? { checkIn, checkOut } : undefined,
     });
-  }, [roomId, getRoom, getBookings, searchParams]);
+  }, [roomId, getRoom, getBookings, checkIn, checkOut, hasValidDate]);
 
   if (roomLoading || loading) return <CenterLoader />;
 
@@ -51,14 +54,11 @@ const BookingPage = () => {
           </Group>
         </Stack>
       </Group>
-      <GridList>
-        {bookings.map((booking) => (
-          <BookingCard
-            key={booking.id}
-            booking={booking}
-          />
-        ))}
-      </GridList>
+      {!bookings.length ? (
+        <BookingsNotFoundMessage hasDate={hasValidDate} />
+      ) : (
+        <BookingsList bookings={bookings} />
+      )}
     </Stack>
   );
 };

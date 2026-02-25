@@ -1,5 +1,5 @@
-export { useBookings } from "./data/store";
+export { default as BookingsList } from "./ui/bookings-list";
 
-export { default as BookingCard } from "./ui/booking-card/booking-card";
+export { useBookings } from "./data/store";
 
 export type { IBooking, IGetBookingsParams } from "./data/types";
