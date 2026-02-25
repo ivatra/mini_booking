@@ -26,20 +26,6 @@ export const api: IApi = {
 
         if (!range) return true;
 
-        console.log(
-          room.id,
-          {
-            myRange: [range.checkIn, range.checkOut],
-            bookingRange: [booking.checkIn, booking.checkOut],
-          },
-          isRangeOverlap(
-            range.checkIn,
-            range.checkOut,
-            booking.checkIn,
-            booking.checkOut,
-          ),
-        );
-
         return isRangeOverlap(
           range.checkIn,
           range.checkOut,
