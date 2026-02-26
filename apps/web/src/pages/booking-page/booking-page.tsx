@@ -1,6 +1,6 @@
-import { BookingsList, useBookings, useRoom } from "@entities";
+import { BookingsList, useBookingsStore, useGetRoomStore } from "@entities";
 import { Group, Stack, Text, Title } from "@mantine/core";
-import { CenterLoader, ErrorMessage } from "@shared";
+import { CenterLoader, ErrorMessage, isValidUiRange } from "@shared";
 import { useEffect } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 
@@ -8,15 +8,22 @@ import s from "./booking-page.module.css";
 import BookingsNotFoundMessage from "./bookings-not-found-message";
 
 const BookingPage = () => {
-  const { roomId } = useParams<{ roomId: string }>();
   const [searchParams] = useSearchParams();
-  const { bookings, loading, error, getBookings } = useBookings();
-  const { room, loading: roomLoading, error: roomError, getRoom } = useRoom();
-
   const checkIn = searchParams.get("in");
   const checkOut = searchParams.get("out");
+  const highlightId = searchParams.get("highlight") || undefined;
 
-  const hasValidDate = !!(checkIn && checkOut);
+  const { roomId } = useParams<{ roomId: string }>();
+
+  const { bookings, loading, error, getBookings } = useBookingsStore();
+  const {
+    room,
+    loading: roomLoading,
+    error: roomError,
+    action: getRoom,
+  } = useGetRoomStore();
+
+  const hasValidDate = !isValidUiRange([checkIn, checkOut]);
 
   useEffect(() => {
     if (!roomId) return;
@@ -25,7 +32,7 @@ const BookingPage = () => {
 
     getBookings({
       roomId,
-      date: hasValidDate ? { checkIn, checkOut } : undefined,
+      date: checkIn && checkOut ? { checkIn, checkOut } : undefined,
     });
   }, [roomId, getRoom, getBookings, checkIn, checkOut, hasValidDate]);
 
@@ -57,7 +64,10 @@ const BookingPage = () => {
       {!bookings.length ? (
         <BookingsNotFoundMessage hasDate={hasValidDate} />
       ) : (
-        <BookingsList bookings={bookings} />
+        <BookingsList
+          bookings={bookings}
+          highlightCardId={highlightId}
+        />
       )}
     </Stack>
   );

@@ -1,4 +1,4 @@
-export { useHotels } from "./data/store";
+export { useHotelsStore } from "./data/use-hotels-store";
 
 export { default as HotelCardsList } from "./ui/hotel-cards-list/hotel-cards-list";
 

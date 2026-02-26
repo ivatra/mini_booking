@@ -1,13 +1,10 @@
 import { Stack, Text } from "@mantine/core";
-import {
-  DatePickerInput,
-  type DatesRangeValue,
-  type DateValue,
-} from "@mantine/dates";
+import { DatePickerInput } from "@mantine/dates";
+import type { TUiDatePickerInput } from "@shared";
 
 interface IProps {
-  value: DatesRangeValue<DateValue>;
-  onChange: (v: DatesRangeValue<DateValue>) => void;
+  value: TUiDatePickerInput;
+  onChange: (v: TUiDatePickerInput) => void;
 }
 
 const BookingDatePicker = ({ value, onChange }: IProps) => (

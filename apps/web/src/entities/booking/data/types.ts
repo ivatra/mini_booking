@@ -22,7 +22,7 @@ export interface ICreateBookingParams {
   status: TBookingStatus;
 }
 
-export interface IBookingsState {
+export interface IUseBookingsStore {
   bookings: IBooking[];
   loading: number;
   error: string | null;

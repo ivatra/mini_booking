@@ -1,5 +1,5 @@
-import { useDateRangeStore, useRooms } from "@entities";
-import { MOCK_HOTELS } from "@shared";
+import { useRoomsStore } from "@entities";
+import { MOCK_HOTELS, useDateRangeStore } from "@shared";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
@@ -7,7 +7,7 @@ import { getGetRoomsParams, getIsUiRangeValid } from "./helpers";
 
 const useDetailsPage = () => {
   const { hotelId } = useParams<{ hotelId: string }>();
-  const { getRooms, rooms, loading, error } = useRooms();
+  const { getRooms, rooms, loading, error } = useRoomsStore();
 
   const hotel = MOCK_HOTELS.find((v) => v.id === hotelId);
 

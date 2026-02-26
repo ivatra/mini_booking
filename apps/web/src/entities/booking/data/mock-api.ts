@@ -35,6 +35,23 @@ export const api: IApi = {
   },
 
   createBooking: async ({ roomId, checkIn, checkOut, status }) => {
+    const hasConflict = MOCK_BOOKING.some((booking) => {
+      if (booking.roomId !== roomId) return false;
+
+      return isRangeOverlap(
+        checkIn,
+        checkOut,
+        booking.checkIn,
+        booking.checkOut,
+      );
+    });
+
+    if (hasConflict) {
+      throw new Error(
+        "Бронирования не должны пересекаться. В этот период уже есть бронь для этого номера",
+      );
+    }
+
     const newBooking: IBooking = {
       id: generateId(),
       roomId,

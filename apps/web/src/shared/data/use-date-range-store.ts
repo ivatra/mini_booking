@@ -1,13 +1,14 @@
-import type { DatesRangeValue, DateValue } from "@mantine/dates";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-interface DateRangeStore {
-  date: DatesRangeValue<DateValue>;
-  setDate: (date: DatesRangeValue<DateValue>) => void;
+import type { TUiDatePickerInput } from "../types";
+
+export interface IDateRangeStore {
+  date: TUiDatePickerInput;
+  setDate: (date: TUiDatePickerInput) => void;
 }
 
-const useDateRangeStore = create<DateRangeStore>()(
+const useDateRangeStore = create<IDateRangeStore>()(
   persist(
     (set) => ({
       date: [null, null],

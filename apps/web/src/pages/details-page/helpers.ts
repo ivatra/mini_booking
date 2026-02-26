@@ -1,10 +1,13 @@
 import type { IGetRoomsParams } from "@entities";
-import type { DatesRangeValue, DateValue } from "@mantine/dates";
-import { isValidUiRange, convertDateToIso } from "@shared";
+import {
+  isValidUiRange,
+  convertDateToIso,
+  type TUiDatePickerInput,
+} from "@shared";
 
 type TGetRoomsStoreParams = {
   hotelId: string;
-  date: DatesRangeValue<DateValue>;
+  date: TUiDatePickerInput;
 };
 
 export const getGetRoomsParams = (paramsIn: TGetRoomsStoreParams) => {
@@ -23,13 +26,10 @@ export const getGetRoomsParams = (paramsIn: TGetRoomsStoreParams) => {
   return paramsOut;
 };
 
-export const getIsUiRangeValid = (date: DatesRangeValue<DateValue>) =>
+export const getIsUiRangeValid = (date: TUiDatePickerInput) =>
   (!date[0] && !date[1]) || (date[0] && date[1]);
 
-export const buildRoomLink = (
-  roomId: string,
-  date: DatesRangeValue<DateValue>,
-) => {
+export const buildRoomLink = (roomId: string, date: TUiDatePickerInput) => {
   const params = new URLSearchParams();
 
   if (date[0]) params.set("in", date[0].toString());

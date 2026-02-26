@@ -2,9 +2,9 @@ import { getEnvVar } from "@shared";
 import { create } from "zustand";
 
 import { api } from "./mock-api";
-import type { IBookingsState } from "./types";
+import type { IUseBookingsStore } from "./types";
 
-export const useBookings = create<IBookingsState>((set) => ({
+export const useBookingsStore = create<IUseBookingsStore>((set) => ({
   bookings: [],
   loading: 0,
   error: null,

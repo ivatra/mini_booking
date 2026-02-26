@@ -1,7 +1,5 @@
-export { default as useDateRangeStore } from "./data/date-range-store";
-
-export { useRooms } from "./data/store";
-export { useRoom } from "./data/use-room";
+export { useRoomsStore } from "./data/use-rooms-store";
+export { useGetRoomStore } from "./data/use-get-room-store";
 
 export { default as RoomCard } from "./ui/room-card";
 

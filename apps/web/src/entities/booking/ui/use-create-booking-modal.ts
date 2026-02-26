@@ -1,6 +1,10 @@
-import { useBookings, useHotels, useRooms } from "@entities";
-import type { DatesRangeValue, DateValue } from "@mantine/dates";
-import { convertDateToIso, isValidUiRange } from "@shared";
+import { useBookingsStore, useHotelsStore, useRoomsStore } from "@entities";
+import {
+  convertDateToIso,
+  isValidUiRange,
+  useAsyncAction,
+  type TUiDatePickerInput,
+} from "@shared";
 import { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -9,17 +13,19 @@ import type { TBookingStatus } from "../data/types";
 const useCreateBookingModal = (onClose: () => void) => {
   const navigate = useNavigate();
 
-  const { hotels, getHotels } = useHotels();
-  const { rooms, getRooms } = useRooms();
-  const { createBooking } = useBookings();
+  const { hotels, getHotels } = useHotelsStore();
+  const { rooms, getRooms } = useRoomsStore();
+  const { createBooking } = useBookingsStore();
 
   const [hotelId, setHotelId] = useState<string | null>(null);
   const [roomId, setRoomId] = useState<string | null>(null);
   const [status, setStatus] = useState<TBookingStatus>("avaliable");
 
-  const [dates, setDates] = useState<DatesRangeValue<DateValue>>([null, null]);
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [dates, setDates] = useState<TUiDatePickerInput>([null, null]);
+
+  const { error, execute, loading, setError } = useAsyncAction(
+    "Ошибка при бронировании",
+  );
 
   useEffect(() => {
     if (!hotels.length) {
@@ -42,8 +48,7 @@ const useCreateBookingModal = (onClose: () => void) => {
       return;
     }
 
-    try {
-      setLoading(true);
+    execute(async () => {
       const convertedDates = convertDateToIso(dates);
 
       const booking = await createBooking({
@@ -60,11 +65,7 @@ const useCreateBookingModal = (onClose: () => void) => {
       clearModalData();
       onClose();
       navigate(`/rooms/${roomId}?${params.toString()}`);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "Ошибка при бронировании");
-    } finally {
-      setLoading(false);
-    }
+    });
   };
 
   const onHotelIdChange = (hotelId: string | null) => {

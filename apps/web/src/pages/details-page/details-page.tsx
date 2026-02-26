@@ -1,6 +1,6 @@
 ﻿import { RoomCard } from "@entities";
 import { Group, Stack, Title } from "@mantine/core";
-import { CenterLoader, ErrorMessage, GridList } from "@shared";
+import { CenterLoader, ErrorMessage, GridList, isValidUiRange } from "@shared";
 
 import BookingDatePicker from "./booking-date-picker";
 import s from "./details-page.module.css";
@@ -19,7 +19,7 @@ const DetailsPage = () => {
       <ErrorMessage message=" Не найден отель / комнаты для этого отеля" />
     );
 
-  const isEditMode = !(date[0] && date[1]);
+  const isEditMode = !isValidUiRange(date);
 
   return (
     <Stack className={s.pageWrap}>

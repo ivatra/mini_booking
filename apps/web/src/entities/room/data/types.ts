@@ -12,7 +12,7 @@ export interface IGetRoomsParams {
   range?: { checkIn: string; checkOut: string };
 }
 
-export interface IRoomsState {
+export interface IUseRoomsStore {
   rooms: IRoom[];
   loading: number;
   error: string | null;
@@ -26,10 +26,10 @@ export interface IApi {
   getRoomById: (id: string) => Promise<IRoom | null>;
 }
 
-export interface IRoomState {
+export interface IUseRoomStore {
   room: IRoom | null;
   loading: number;
   error: string | null;
 
-  getRoom: (id: string) => Promise<void>;
+  action: (id: string) => Promise<void>;
 }

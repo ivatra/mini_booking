@@ -2,16 +2,16 @@ import { useState } from "react";
 import { create } from "zustand";
 
 import { api } from "./mock-api";
-import type { IRoomState } from "./types";
+import type { IUseRoomStore } from "./types";
 
-export const useRoom = () => {
+export const useGetRoomStore = () => {
   const [store] = useState(() =>
-    create<IRoomState>((set) => ({
+    create<IUseRoomStore>((set) => ({
       room: null,
       loading: 0,
       error: null,
 
-      getRoom: async (id) => {
+      action: async (id) => {
         set((st) => ({ loading: st.loading + 1, error: null }));
 
         try {

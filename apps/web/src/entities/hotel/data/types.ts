@@ -6,7 +6,7 @@ export interface IHotel {
   roomsLength: number;
 }
 
-export interface IHotelsState {
+export interface IUseHotelsStore {
   hotels: IHotel[];
   loading: number;
   error: string | null;

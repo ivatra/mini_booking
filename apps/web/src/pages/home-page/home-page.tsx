@@ -1,4 +1,4 @@
-import { HotelCardsList, useHotels } from "@entities";
+import { HotelCardsList, useHotelsStore } from "@entities";
 import { Box, Stack } from "@mantine/core";
 import { CenterLoader, ErrorMessage } from "@shared";
 import { useEffect } from "react";
@@ -7,7 +7,7 @@ import Header from "./header";
 import { calcCountOfRooms } from "./helpers";
 
 const HomePage = () => {
-  const { hotels, loading, error, getHotels } = useHotels();
+  const { hotels, loading, error, getHotels } = useHotelsStore();
 
   useEffect(() => {
     getHotels();

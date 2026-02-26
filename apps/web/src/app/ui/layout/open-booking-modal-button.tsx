@@ -1,4 +1,4 @@
-import { useCreateBookingModal } from "@entities";
+import { useManageBookingModalStore } from "@entities";
 import { Tooltip, ActionIcon } from "@mantine/core";
 import { IconBookmarkPlus } from "@tabler/icons-react";
 
@@ -6,7 +6,7 @@ const actionIconColor =
   "light-dark(var(--mantine-color-orange-4), var(--mantine-color-orange-6))";
 
 const OpenBookingModalButton = () => {
-  const { openModal } = useCreateBookingModal();
+  const { openModal } = useManageBookingModalStore();
 
   return (
     <Tooltip

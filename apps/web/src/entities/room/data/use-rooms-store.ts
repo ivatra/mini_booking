@@ -2,20 +2,20 @@ import { getEnvVar } from "@shared";
 import { create } from "zustand";
 
 import { api } from "./mock-api";
-import type { IHotelsState } from "./types";
+import type { IUseRoomsStore } from "./types";
 
-export const useHotels = create<IHotelsState>((set) => ({
-  hotels: [],
+export const useRoomsStore = create<IUseRoomsStore>((set) => ({
+  rooms: [],
   loading: 0,
   error: null,
 
-  getHotels: async () => {
+  getRooms: async (params) => {
     set((st) => ({ loading: st.loading + 1, error: null }));
 
     try {
-      const hotels = await api.getHotels();
+      const rooms = await api.getRooms(params);
 
-      set({ hotels });
+      set({ rooms });
     } catch (e) {
       if (getEnvVar("DEV")) {
         console.warn(
@@ -26,10 +26,18 @@ export const useHotels = create<IHotelsState>((set) => ({
       }
 
       set({
-        error: e instanceof Error ? e.message : "Не удалось загрузить отели",
+        error: e instanceof Error ? e.message : "Не удалось загрузить комнаты",
       });
     } finally {
       set((st) => ({ loading: st.loading - 1 }));
+    }
+  },
+
+  getRoomById: async (id) => {
+    try {
+      return await api.getRoomById(id);
+    } catch {
+      return null;
     }
   },
 }));

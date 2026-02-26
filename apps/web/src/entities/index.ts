@@ -1,13 +1,13 @@
-export { useRooms, useRoom, RoomCard, useDateRangeStore } from "./room";
+export { useRoomsStore, useGetRoomStore, RoomCard } from "./room";
 export type { IRoom, IGetRoomsParams } from "./room";
 
-export { HotelCardsList, useHotels } from "./hotel";
+export { HotelCardsList, useHotelsStore } from "./hotel";
 export type { IHotel } from "./hotel";
 
 export {
-  useBookings,
+  useBookingsStore,
   BookingsList,
-  useCreateBookingModal,
+  useManageBookingModalStore,
   CreateBookingModal,
 } from "./booking";
 export type { IBooking, IGetBookingsParams } from "./booking";

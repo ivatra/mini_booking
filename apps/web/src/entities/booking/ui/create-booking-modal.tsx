@@ -2,9 +2,9 @@ import { Modal, Select, Button, Stack, Group, Text } from "@mantine/core";
 import { DatePickerInput } from "@mantine/dates";
 
 import s from "./create-booking-modal.module.css";
-import useCreateBookingModal from "./use-create-booking-modal";
 import { STATUS_OPTIONS } from "../data/helpers";
 import type { TBookingStatus } from "../data/types";
+import useCreateBookingModal from "./use-create-booking-modal";
 
 interface IProps {
   opened: boolean;
@@ -35,7 +35,13 @@ const CreateBookingModal = ({ opened, onClose }: IProps) => {
       radius="md"
       onClose={onClose}
       size="md">
-      <Stack gap="lg">
+      <Stack
+        component="form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          onSubmit();
+        }}
+        gap="lg">
         <Select
           label="Отель"
           placeholder="Выберите отель"

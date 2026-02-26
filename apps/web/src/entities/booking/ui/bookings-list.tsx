@@ -5,13 +5,16 @@ import BookingCard from "./booking-card/booking-card";
 
 interface IProps {
   bookings: IBooking[];
+  highlightCardId?: string;
 }
-const BookingsList = ({ bookings }: IProps) => (
+
+const BookingsList = ({ bookings, highlightCardId }: IProps) => (
   <GridList>
     {bookings.map((booking) => (
       <BookingCard
         key={booking.id}
         booking={booking}
+        highlight={highlightCardId === booking.id}
       />
     ))}
   </GridList>
