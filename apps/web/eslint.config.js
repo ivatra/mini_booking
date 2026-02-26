@@ -8,6 +8,8 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 import unusedImports from "eslint-plugin-unused-imports";
 
+import TEST_IMPORT_OVERRIDE from "./test/eslint-config";
+
 export default defineConfig([
   globalIgnores(["dist"]),
   {
@@ -64,6 +66,7 @@ export default defineConfig([
         "error",
         {
           patterns: [
+            "@app/*",
             "@pages/*/*",
             "@entities/*/*",
             "@shared/*/*",
@@ -90,6 +93,7 @@ export default defineConfig([
       "spaced-comment": ["warn", "always", { markers: ["/"] }],
     },
   },
+  ...TEST_IMPORT_OVERRIDE,
   // Важно: отключает конфликтующие формат-правила ESLint с Prettier
   eslintConfigPrettier,
 ]);

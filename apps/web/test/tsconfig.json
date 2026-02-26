@@ -1,0 +1,18 @@
+{
+  "extends": "../tsconfig.app.json",
+  "compilerOptions": {
+    "baseUrl": "../",
+    "paths": {
+      "@pages": ["src/pages/index.ts"],
+      "@entities": ["src/entities/index.ts"],
+      "@shared": ["src/shared/index.ts"],
+      "@app": ["src/app/index.ts"],
+
+      "@pages/*": ["src/pages/*"],
+      "@entities/*": ["src/entities/*"],
+      "@shared/*": ["src/shared/*"],
+      "@app/*": ["src/app/*"]
+    }
+  },
+  "include": ["../**/*.ts", "../**/*.tsx"]
+}

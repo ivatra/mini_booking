@@ -1,13 +1,15 @@
-import react from "@vitejs/plugin-react-swc";
+﻿import react from "@vitejs/plugin-react-swc";
 import { resolve } from "node:path";
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
+
+import { USER_CONFIG } from "./test/vite-config";
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   css: {
     modules: {
-      localsConvention: "camelCase", // или "camelCaseOnly"
+      localsConvention: "camelCase",
     },
   },
   resolve: {
@@ -17,4 +19,5 @@ export default defineConfig({
       "@shared": resolve(__dirname, "src/shared"),
     },
   },
+  test: USER_CONFIG,
 });
