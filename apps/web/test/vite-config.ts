@@ -8,7 +8,7 @@ export const USER_CONFIG: ViteUserConfig["test"] = {
   include: ["test/unit/**/*.t.{ts,tsx}", "test/integration/**/*.test.{ts,tsx}"],
   coverage: {
     provider: "v8",
-    reporter: ["text", "json", "html"],
+    reporter: ["text", "text-summary"],
     exclude: [
       "test/**",
       "**/*.t.{ts,tsx}",
