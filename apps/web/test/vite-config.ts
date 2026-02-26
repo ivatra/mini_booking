@@ -5,7 +5,7 @@ export const USER_CONFIG: ViteUserConfig["test"] = {
   environment: "jsdom",
   globals: true,
   setupFiles: "test/setup.ts",
-  include: ["test/unit/**/*.t.{ts,tsx}", "test/integration/**/*.test.{ts,tsx}"],
+  include: ["test/unit/**/*.t.{ts,tsx}", "test/integration/**/*.t.{ts,tsx}"],
   coverage: {
     provider: "v8",
     reporter: ["text", "text-summary"],
