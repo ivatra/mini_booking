@@ -5,7 +5,7 @@ import { createRoot } from "react-dom/client";
 import App from "./app/app.tsx";
 import { analytics, getEnvVar } from "@shared";
 
-if (getEnvVar("VITE_ENABLE_ANALYTICS")) {
+if (getEnvVar("VITE_ENABLE_ANALYTICS") === "true") {
   analytics.init();
 }
 

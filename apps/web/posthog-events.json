@@ -1,0 +1,1102 @@
+[
+  {
+    "event": "$web_vitals",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/hotels/hotel-2",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:34:25.162000Z"
+  },
+  {
+    "event": "$pageview",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/hotels/hotel-2",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:34:18.220000Z"
+  },
+  {
+    "event": "$pageview",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/hotels/hotel-2",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:28:40.708000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/hotels/hotel-2",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:30.648000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:30.537000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:29.731000Z"
+  },
+  {
+    "event": "booking_button_clicked",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:29.731000Z"
+  },
+  {
+    "event": "booking_action_succeeded",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:29.447000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:29.140000Z"
+  },
+  {
+    "event": "booking_button_clicked",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:29.140000Z"
+  },
+  {
+    "event": "booking_button_clicked",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:28.458000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:28.456000Z"
+  },
+  {
+    "event": "booking_action_succeeded",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:28.183000Z"
+  },
+  {
+    "event": "booking_button_clicked",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:27.876000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:27.875000Z"
+  },
+  {
+    "event": "booking_button_clicked",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:26.806000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:26.805000Z"
+  },
+  {
+    "event": "booking_action_succeeded",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:26.451000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:26.149000Z"
+  },
+  {
+    "event": "booking_button_clicked",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:26.149000Z"
+  },
+  {
+    "event": "$rageclick",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:26.148000Z"
+  },
+  {
+    "event": "booking_button_clicked",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:25.504000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:25.503000Z"
+  },
+  {
+    "event": "booking_action_succeeded",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:25.160000Z"
+  },
+  {
+    "event": "booking_button_clicked",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:24.852000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-202?in=2026-03-06&out=2026-03-07",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:24.851000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/hotels/hotel-2",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:24.178000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/hotels/hotel-2",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:23.533000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/hotels/hotel-2",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:23.332000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/hotels/hotel-2",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:22.806000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/hotels/hotel-2",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:22.215000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-201",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:21.165000Z"
+  },
+  {
+    "event": "booking_button_clicked",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-104?highlight=1dooek0",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:17.517000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-104?highlight=1dooek0",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:17.516000Z"
+  },
+  {
+    "event": "booking_action_succeeded",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-104?highlight=1dooek0",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:17.210000Z"
+  },
+  {
+    "event": "booking_button_clicked",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-104?highlight=1dooek0",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:16.899000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-104?highlight=1dooek0",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:16.898000Z"
+  },
+  {
+    "event": "$rageclick",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-104?highlight=1dooek0",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:16.896000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/hotels/hotel-2",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:16.283000Z"
+  },
+  {
+    "event": "booking_button_clicked",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-104?highlight=1dooek0",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:16.267000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-104?highlight=1dooek0",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:16.266000Z"
+  },
+  {
+    "event": "booking_action_succeeded",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-104?highlight=1dooek0",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:15.926000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:15.625000Z"
+  },
+  {
+    "event": "booking_button_clicked",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-104?highlight=1dooek0",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:15.623000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-104?highlight=1dooek0",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:15.622000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-104?highlight=1dooek0",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:14.755000Z"
+  },
+  {
+    "event": "$pageview",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-104?highlight=1dooek0",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:17:08.820000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:13.145000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:12.606000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:11.565000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:11.217000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:10.963000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:10.024000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:09.680000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:09.290000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:08.912000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:08.558000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:07.803000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:07.179000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:07.026000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:06.743000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:06.548000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:06.385000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:06.221000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:06.047000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:05.839000Z"
+  },
+  {
+    "event": "$rageclick",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:05.838000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:05.509000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:05.149000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:04.610000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:04.256000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:03.883000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:03.483000Z"
+  },
+  {
+    "event": "$rageclick",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:03.482000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:03.056000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:02.508000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/hotels/hotel-2",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:02.467000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:01.686000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/hotels/hotel-1",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:00.866000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-101",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:12:00.230000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/hotels/hotel-1",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:59.476000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-102",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:59.403000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/hotels/hotel-1",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:58.758000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-104",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:58.075000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/hotels/hotel-1",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:57.255000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-101",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:56.460000Z"
+  },
+  {
+    "event": "booking_button_clicked",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-101",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:29.643000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-101",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:29.642000Z"
+  },
+  {
+    "event": "booking_button_clicked",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-101",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:28.623000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-101",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:28.622000Z"
+  },
+  {
+    "event": "booking_button_clicked",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-101",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:27.628000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-101",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:27.625000Z"
+  },
+  {
+    "event": "booking_button_clicked",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-101",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:15.301000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-101",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:15.300000Z"
+  },
+  {
+    "event": "booking_button_clicked",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-101",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:14.618000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-101",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:14.617000Z"
+  },
+  {
+    "event": "$rageclick",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-101",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:14.616000Z"
+  },
+  {
+    "event": "$autocapture",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-101",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:14.440000Z"
+  },
+  {
+    "event": "booking_button_clicked",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-101",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:14.440000Z"
+  },
+  {
+    "event": "booking_button_clicked",
+    "Person": {
+      "display_name": "019c9ab2-a99d-7946-bd86-0f6a7afca521",
+      "id": "65ad3073-b7d2-5b5e-b745-da1ccfe870c6",
+      "distinct_id": "019c9ab2-a99d-7946-bd86-0f6a7afca521"
+    },
+    "Url / Screen": "http://127.0.0.1:5173/rooms/room-101",
+    "properties.$lib": "web",
+    "timestamp": "2026-02-26T16:11:13.701000Z"
+  }
+]
