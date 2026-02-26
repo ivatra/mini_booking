@@ -1,4 +1,6 @@
-﻿export { default as useDateRangeStore } from "./data/use-date-range-store";
+﻿export { default as analytics } from "./analytics";
+
+export { default as useDateRangeStore } from "./data/use-date-range-store";
 export { default as useAsyncAction } from "./data/use-async-action";
 
 export { default as NavigateButton } from "./ui/navigate-button";

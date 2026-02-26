@@ -1,4 +1,4 @@
-import { getEnvVar } from "@shared";
+import { analytics, getEnvVar } from "@shared";
 import { create } from "zustand";
 
 import { api } from "./mock-api";
@@ -44,7 +44,18 @@ export const useBookingsStore = create<IUseBookingsStore>((set, get) => ({
           b.id === bookingId ? { ...b, status: "busy" } : b,
         ),
       }));
+
+      analytics.track("booking_action_succeeded", {
+        bookingId,
+        action: "book",
+      });
     } catch (e) {
+      analytics.track("booking_action_failed", {
+        bookingId,
+        action: "book",
+        reason: e instanceof Error ? e.message : String(e),
+      });
+
       if (getEnvVar("DEV")) {
         console.warn(
           e instanceof Error ? e.message : `Не удалось забронировать ${e}`,

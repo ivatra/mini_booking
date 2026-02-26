@@ -3,6 +3,7 @@ import { Button, Group, Stack, Text, Title } from "@mantine/core";
 
 import s from "./booking-card.module.css";
 import { useBookingActions } from "../../data/use-booking-actions";
+import { analytics } from "@shared";
 
 interface IProps {
   booking: IBooking;
@@ -22,7 +23,16 @@ const BookingCard = ({ booking, highlight }: IProps) => {
   const isFree = booking.status === "avaliable";
   const statusClassName = isFree ? s.status_free : s.status_busy;
 
-  const onClick = () => (isFree ? book() : cancelBook());
+  const onClick = () => {
+    analytics.track("booking_button_clicked", {
+      action: isFree ? "book" : "cancel",
+      bookingId: booking.id,
+      currentStatus: booking.status,
+      roomId: booking.roomId,
+    });
+
+    isFree ? book() : cancelBook();
+  };
 
   return (
     <Stack className={`${s.booking_card} ${highlight ? s.cardHighlight : ""}`}>
