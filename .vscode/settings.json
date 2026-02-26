@@ -1,3 +1,4 @@
 {
-  "cssModules.camelCase": true
+  "cssModules.camelCase": true,
+  "typescript.tsdk": "apps/web/node_modules/typescript/lib"
 }
