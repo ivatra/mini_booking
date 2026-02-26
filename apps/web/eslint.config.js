@@ -8,7 +8,7 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 import unusedImports from "eslint-plugin-unused-imports";
 
-import TEST_IMPORT_OVERRIDE from "./test/eslint-config";
+import TEST_IMPORT_OVERRIDE from "./test/eslint-config.js";
 
 export default defineConfig([
   globalIgnores(["dist"]),

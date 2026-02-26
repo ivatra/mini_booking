@@ -1,7 +1,8 @@
+import { describe, expect, it } from "vitest";
+
 import { api as bookingsApi } from "../../../src/entities/booking/data/mock-api";
 import { api as hotelsApi } from "../../../src/entities/hotel/data/mock-api";
 import { api as roomsApi } from "../../../src/entities/room/data/mock-api";
-import { describe, expect, it } from "vitest";
 
 describe("mock api integration", () => {
   it("returns bookings array with id field", async () => {

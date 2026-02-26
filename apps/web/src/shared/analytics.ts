@@ -1,4 +1,5 @@
 import posthog from "posthog-js";
+
 import { getEnvVar } from "./data/helpers";
 
 type AnalyticsEventMap = {
@@ -30,6 +31,7 @@ const analytics = {
         console.warn(
           "Не получилось достать ключ для posthog. Пропускаю инициализацию",
         );
+
         return;
       }
     }

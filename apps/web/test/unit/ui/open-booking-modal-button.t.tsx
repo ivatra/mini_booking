@@ -2,6 +2,7 @@ import OpenBookingModalButton from "@app/ui/layout/open-booking-modal-button";
 import { useManageBookingModalStore } from "@entities";
 import { fireEvent, screen } from "@testing-library/react";
 import { describe, expect, it, vi, beforeEach } from "vitest";
+
 import renderWithMantine from "./render-with-mantine";
 
 vi.mock("@entities", () => ({

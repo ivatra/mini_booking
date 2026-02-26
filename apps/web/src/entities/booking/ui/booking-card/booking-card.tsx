@@ -1,9 +1,9 @@
 import { type IBooking } from "@entities";
 import { Button, Group, Stack, Text, Title } from "@mantine/core";
+import { analytics } from "@shared";
 
 import s from "./booking-card.module.css";
 import { useBookingActions } from "../../data/use-booking-actions";
-import { analytics } from "@shared";
 
 interface IProps {
   booking: IBooking;
@@ -31,7 +31,7 @@ const BookingCard = ({ booking, highlight }: IProps) => {
       roomId: booking.roomId,
     });
 
-    isFree ? book() : cancelBook();
+    return isFree ? book() : cancelBook();
   };
 
   return (
