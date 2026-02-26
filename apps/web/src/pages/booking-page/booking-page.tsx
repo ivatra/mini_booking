@@ -12,10 +12,16 @@ const BookingPage = () => {
   const checkIn = searchParams.get("in");
   const checkOut = searchParams.get("out");
   const highlightId = searchParams.get("highlight") || undefined;
-
   const { roomId } = useParams<{ roomId: string }>();
 
-  const { bookings, loading, error, getBookings } = useBookingsStore();
+  const {
+    bookings,
+    loading,
+    error,
+    getBookings,
+    subscribeToRoomBookingStatusChange,
+    unSubscribeFromRoomBookingStatusChange,
+  } = useBookingsStore();
   const {
     room,
     loading: roomLoading,
@@ -34,7 +40,22 @@ const BookingPage = () => {
       roomId,
       date: checkIn && checkOut ? { checkIn, checkOut } : undefined,
     });
-  }, [roomId, getRoom, getBookings, checkIn, checkOut, hasValidDate]);
+
+    subscribeToRoomBookingStatusChange(roomId);
+
+    return () => {
+      unSubscribeFromRoomBookingStatusChange(roomId);
+    };
+  }, [
+    roomId,
+    getRoom,
+    getBookings,
+    checkIn,
+    checkOut,
+    hasValidDate,
+    subscribeToRoomBookingStatusChange,
+    unSubscribeFromRoomBookingStatusChange,
+  ]);
 
   if (roomLoading || loading) return <CenterLoader />;
 

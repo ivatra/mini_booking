@@ -4,8 +4,9 @@ import { create } from "zustand";
 import { api } from "./mock-api";
 import type { IUseBookingsStore } from "./types";
 
-export const useBookingsStore = create<IUseBookingsStore>((set) => ({
+export const useBookingsStore = create<IUseBookingsStore>((set, get) => ({
   bookings: [],
+  subscriptions: new Map(),
   loading: 0,
   error: null,
 
@@ -89,5 +90,40 @@ export const useBookingsStore = create<IUseBookingsStore>((set) => ({
 
       throw e;
     }
+  },
+
+  subscribeToRoomBookingStatusChange: (roomId: string) => {
+    if (get().subscriptions.has(roomId)) return;
+
+    const unsubscribe = api.subscribeToRoomBookingStatusChange(
+      roomId,
+      (bookingId, status) => {
+        get()._updateBookingStatus(bookingId, status);
+      },
+    );
+
+    get().subscriptions.set(roomId, unsubscribe);
+  },
+
+  unSubscribeFromRoomBookingStatusChange: (roomId: string) => {
+    const unsubscribe = get().subscriptions.get(roomId);
+
+    if (unsubscribe) {
+      unsubscribe();
+      get().subscriptions.delete(roomId);
+    }
+  },
+
+  unSubscribeFromAllRoomsBookingStatusChange: () => {
+    get().subscriptions.forEach((unsubscribe) => unsubscribe());
+    get().subscriptions.clear();
+  },
+
+  _updateBookingStatus: (bookingId, status) => {
+    set((state) => ({
+      bookings: state.bookings.map((b) =>
+        b.id === bookingId ? { ...b, status } : b,
+      ),
+    }));
   },
 }));

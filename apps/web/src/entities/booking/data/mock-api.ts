@@ -1,7 +1,7 @@
 import { isRangeOverlap, MOCK_BOOKING } from "@shared";
 
 import { generateId } from "./helpers";
-import type { IApi, IBooking } from "./types";
+import type { IApi, IBooking, TBookingStatus } from "./types";
 
 export const api: IApi = {
   getBookings: async ({ roomId, date }) => {
@@ -66,5 +66,36 @@ export const api: IApi = {
     await new Promise((resolve) => setTimeout(resolve, 300));
 
     return newBooking;
+  },
+
+  subscribeToRoomBookingStatusChange: (
+    roomId: string,
+    onUpdate: (bookingId: string, status: TBookingStatus) => void,
+  ) => {
+    const interval = setInterval(() => {
+      const roomBookings = MOCK_BOOKING.filter((b) => b.roomId === roomId);
+
+      if (roomBookings.length === 0) return;
+
+      const randomIndex = Math.floor(Math.random() * roomBookings.length);
+      const randomBooking = roomBookings[randomIndex];
+
+      const newStatus = randomBooking.status === "busy" ? "avaliable" : "busy";
+
+      randomBooking.status = newStatus;
+
+      console.log(
+        `[MOCK] Booking ${randomBooking.id} status changed to ${newStatus}`,
+      );
+
+      onUpdate(randomBooking.id, newStatus);
+    }, 30000);
+
+    console.log(`[MOCK] Subscribed to room ${roomId}`);
+
+    return () => {
+      console.log(`[MOCK] Unsubscribed from room ${roomId}`);
+      clearInterval(interval);
+    };
   },
 };
