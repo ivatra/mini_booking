@@ -11,8 +11,9 @@ export const USER_CONFIG: ViteUserConfig["test"] = {
     "test/api/**/*.t.{ts,tsx}",
   ],
   coverage: {
+    reportsDirectory: "test/results/coverage",
     provider: "v8",
-    reporter: ["text", "text-summary"],
+    reporter: ["text", "text-summary", "html"],
     exclude: [
       "test/**",
       "**/*.t.{ts,tsx}",
