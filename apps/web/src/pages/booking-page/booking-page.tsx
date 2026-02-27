@@ -1,6 +1,6 @@
 import { BookingsList, useBookingsStore, useGetRoomStore } from "@entities";
-import { Group, Stack, Text, Title } from "@mantine/core";
 import { CenterLoader, ErrorMessage, isValidUiRange } from "@shared";
+import { Group, Stack, Text, Title } from "@shared/ui-kit";
 import { useEffect } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 

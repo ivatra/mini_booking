@@ -29,7 +29,10 @@
     "paths": {
       "@pages": ["src/pages/index.ts"],
       "@entities": ["src/entities/index.ts"],
-      "@shared": ["src/shared/index.ts"]
+      "@shared": ["src/shared/index.ts"],
+
+      "@shared/ui-kit": ["src/shared/ui-kit.ts"],
+      "@shared/icons": ["src/shared/icons.ts"]
     }
   },
   "include": ["src"]

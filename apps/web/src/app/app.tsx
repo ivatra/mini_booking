@@ -1,17 +1,15 @@
-import "@mantine/core/styles.css";
-import "@mantine/dates/styles.css";
-
+import "./ui-kit-styles";
 import "./index.css";
 import RootDatesProvider from "./providers/dates-provider";
-import RootMantineProvider from "./providers/mantine-provider";
+import RootUiKitProvider from "./providers/ui-kit-provider";
 import RootRouter from "./router";
 
 const App = () => (
-  <RootMantineProvider>
+  <RootUiKitProvider>
     <RootDatesProvider>
       <RootRouter />
     </RootDatesProvider>
-  </RootMantineProvider>
+  </RootUiKitProvider>
 );
 
 export default App;

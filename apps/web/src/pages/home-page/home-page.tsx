@@ -1,6 +1,6 @@
 import { HotelCardsList, useHotelsStore } from "@entities";
-import { Box, Stack } from "@mantine/core";
 import { CenterLoader, ErrorMessage } from "@shared";
+import { Box, Stack } from "@shared/ui-kit";
 import { useEffect } from "react";
 
 import Header from "./header";

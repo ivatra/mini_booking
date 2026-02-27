@@ -1,5 +1,5 @@
-import { Badge, Group, Title } from "@mantine/core";
 import { pluralizeRu } from "@shared";
+import { Badge, Group, Title } from "@shared/ui-kit";
 
 import s from "../hotel-card.module.css";
 

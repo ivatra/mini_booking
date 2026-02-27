@@ -1,4 +1,4 @@
-import { Center, Stack, Loader } from "@mantine/core";
+import { Center, Stack, Loader } from "@shared/ui-kit";
 
 const CenterLoader = () => (
   <Center

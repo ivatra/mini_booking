@@ -1,4 +1,4 @@
-import { Group, Paper, Stack, Text, Title } from "@mantine/core";
+import { Group, Paper, Stack, Text, Title } from "@shared/ui-kit";
 
 import s from "./header.module.css";
 

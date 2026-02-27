@@ -1,4 +1,4 @@
-import { Group } from "@mantine/core";
+import { Group } from "@shared/ui-kit";
 import { useLocation } from "react-router-dom";
 
 import s from "../layout.module.css";

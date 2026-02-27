@@ -1,5 +1,5 @@
-import { ActionIcon, Tooltip } from "@mantine/core";
-import { IconArrowLeft } from "@tabler/icons-react";
+import { IconArrowLeft } from "@shared/icons";
+import { ActionIcon, Tooltip } from "@shared/ui-kit";
 import { useNavigate } from "react-router-dom";
 
 const NavigateBackButton = () => {

@@ -1,6 +1,6 @@
 ﻿import { RoomCard } from "@entities";
-import { Group, Stack, Title } from "@mantine/core";
 import { CenterLoader, ErrorMessage, GridList, isValidUiRange } from "@shared";
+import { Group, Stack, Title } from "@shared/ui-kit";
 
 import BookingDatePicker from "./booking-date-picker";
 import s from "./details-page.module.css";

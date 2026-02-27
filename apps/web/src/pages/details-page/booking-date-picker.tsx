@@ -1,6 +1,6 @@
-import { Stack, Text } from "@mantine/core";
-import { DatePickerInput } from "@mantine/dates";
 import type { TUiDatePickerInput } from "@shared";
+import { Stack, Text } from "@shared/ui-kit";
+import { DatePickerInput } from "@shared/ui-kit";
 
 interface IProps {
   value: TUiDatePickerInput;

@@ -1,6 +1,6 @@
 ﻿import type { IRoom } from "@entities";
-import { Group, Stack, Text, Title } from "@mantine/core";
 import { NavigateButton } from "@shared";
+import { Group, Stack, Text, Title } from "@shared/ui-kit";
 
 import s from "./room-card.module.css";
 

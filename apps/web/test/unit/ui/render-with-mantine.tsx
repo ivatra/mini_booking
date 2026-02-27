@@ -1,7 +1,7 @@
-import { MantineProvider } from "@mantine/core";
+import { UIKitProvider } from "@shared/ui-kit";
 import { render } from "@testing-library/react";
 
 const renderWithMantine = (children: React.ReactNode) =>
-  render(<MantineProvider>{children}</MantineProvider>);
+  render(<UIKitProvider>{children}</UIKitProvider>);
 
 export default renderWithMantine;

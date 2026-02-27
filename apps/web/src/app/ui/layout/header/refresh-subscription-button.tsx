@@ -1,5 +1,5 @@
-import { Tooltip, ActionIcon, type ActionIconProps } from "@mantine/core";
-import { IconRefresh } from "@tabler/icons-react";
+import { IconRefresh } from "@shared/icons";
+import { Tooltip, ActionIcon, type ActionIconProps } from "@shared/ui-kit";
 
 // позже заменишь на свой store
 const isSuccessConnection = true; // store.isSuccessConnection

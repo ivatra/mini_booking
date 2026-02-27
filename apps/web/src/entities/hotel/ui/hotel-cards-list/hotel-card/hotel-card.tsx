@@ -1,6 +1,6 @@
 import type { IHotel } from "@entities";
-import { Card, Stack } from "@mantine/core";
 import { NavigateButton } from "@shared";
+import { Card, Stack } from "@shared/ui-kit";
 
 import s from "./hotel-card.module.css";
 import AddressInfo from "./ui/address-info";

@@ -1,4 +1,4 @@
-import { Button } from "@mantine/core";
+import { Button } from "@shared/ui-kit";
 import { useNavigate } from "react-router-dom";
 
 interface IProps {

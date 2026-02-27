@@ -1,6 +1,6 @@
 import { type IBooking } from "@entities";
-import { Button, Group, Stack, Text, Title } from "@mantine/core";
 import { analytics } from "@shared";
+import { Button, Group, Stack, Text, Title } from "@shared/ui-kit";
 
 import s from "./booking-card.module.css";
 import { useBookingActions } from "../../data/use-booking-actions";

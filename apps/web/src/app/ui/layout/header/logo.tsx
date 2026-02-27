@@ -1,5 +1,5 @@
-import { Box, Title } from "@mantine/core";
-import { IconBuilding } from "@tabler/icons-react";
+import { IconBuilding } from "@shared/icons";
+import { Box, Title } from "@shared/ui-kit";
 import { Link } from "react-router-dom";
 
 import s from "../layout.module.css";

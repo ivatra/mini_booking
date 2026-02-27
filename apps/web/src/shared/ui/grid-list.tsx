@@ -1,4 +1,4 @@
-import { Box, Paper } from "@mantine/core";
+import { Box, Paper } from "@shared/ui-kit";
 
 import s from "./grid-list.module.css";
 

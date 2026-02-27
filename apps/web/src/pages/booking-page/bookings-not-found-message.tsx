@@ -1,4 +1,4 @@
-import { Stack, Text, Title } from "@mantine/core";
+import { Stack, Text, Title } from "@shared/ui-kit";
 
 interface IProps {
   hasDate: boolean;

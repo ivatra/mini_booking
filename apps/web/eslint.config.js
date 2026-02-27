@@ -66,10 +66,14 @@ export default defineConfig([
         "error",
         {
           patterns: [
+            "@mantine/*",
             "@app/*",
             "@pages/*/*",
             "@entities/*/*",
             "@shared/*/*",
+
+            "!@shared/ui-kit",
+            "!@shared/icons",
 
             "../pages/*/*",
             "../../pages/*/*",
@@ -91,6 +95,16 @@ export default defineConfig([
       "no-trailing-spaces": "warn",
       "eol-last": ["warn", "always"],
       "spaced-comment": ["warn", "always", { markers: ["/"] }],
+    },
+  },
+  {
+    files: [
+      "src/shared/ui-kit.ts",
+      "src/shared/icons.ts",
+      "src/app/ui-kit-styles.ts",
+    ],
+    rules: {
+      "no-restricted-imports": ["off"],
     },
   },
   ...TEST_IMPORT_OVERRIDE,

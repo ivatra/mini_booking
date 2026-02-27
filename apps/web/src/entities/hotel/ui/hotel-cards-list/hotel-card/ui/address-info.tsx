@@ -1,4 +1,4 @@
-import { Group, Text } from "@mantine/core";
+import { Group, Text } from "@shared/ui-kit";
 
 import s from "../hotel-card.module.css";
 

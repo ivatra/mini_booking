@@ -1,4 +1,4 @@
-import { DatesProvider } from "@mantine/dates";
+import { DatesProvider } from "@shared/ui-kit";
 
 interface IProps {
   children: React.ReactNode;

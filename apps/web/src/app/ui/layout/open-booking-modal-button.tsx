@@ -1,6 +1,6 @@
 import { useManageBookingModalStore } from "@entities";
-import { Tooltip, ActionIcon } from "@mantine/core";
-import { IconBookmarkPlus } from "@tabler/icons-react";
+import { IconBookmarkPlus } from "@shared/icons";
+import { Tooltip, ActionIcon } from "@shared/ui-kit";
 
 const actionIconColor =
   "light-dark(var(--mantine-color-orange-4), var(--mantine-color-orange-6))";

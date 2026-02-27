@@ -1,5 +1,5 @@
-import { Modal, Select, Button, Stack, Group, Text } from "@mantine/core";
-import { DatePickerInput } from "@mantine/dates";
+import { DatePickerInput } from "@shared/ui-kit";
+import { Modal, Select, Button, Stack, Group, Text } from "@shared/ui-kit";
 
 import s from "./create-booking-modal.module.css";
 import useCreateBookingModal from "./use-create-booking-modal";
