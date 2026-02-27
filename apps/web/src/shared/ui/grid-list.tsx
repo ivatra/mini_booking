@@ -1,4 +1,4 @@
-import { Box, Paper } from "@shared/ui-kit";
+import { Box } from "@shared/ui-kit";
 
 import s from "./grid-list.module.css";
 
@@ -8,10 +8,10 @@ interface IProps {
 
 export const GridList = ({ children }: IProps) => (
   <Box className={s.scrollWrapper}>
-    <Paper
+    <Box
       className={s.grid}
       component="section">
       {children}
-    </Paper>
+    </Box>
   </Box>
 );
