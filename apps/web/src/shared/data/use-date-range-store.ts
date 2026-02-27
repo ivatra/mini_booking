@@ -8,7 +8,7 @@ export interface IDateRangeStore {
   setDate: (date: TUiDatePickerInput) => void;
 }
 
-const useDateRangeStore = create<IDateRangeStore>()(
+export const useDateRangeStore = create<IDateRangeStore>()(
   persist(
     (set) => ({
       date: [null, null],
@@ -19,5 +19,3 @@ const useDateRangeStore = create<IDateRangeStore>()(
     },
   ),
 );
-
-export default useDateRangeStore;

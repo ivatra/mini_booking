@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useAsyncAction = (errMsg?: string) => {
+export const useAsyncAction = (errMsg?: string) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -18,5 +18,3 @@ const useAsyncAction = (errMsg?: string) => {
 
   return { loading, error, execute, setError };
 };
-
-export default useAsyncAction;

@@ -1,6 +1,6 @@
 import { Center, Stack, Loader } from "@shared/ui-kit";
 
-const CenterLoader = () => (
+export const CenterLoader = () => (
   <Center
     w="100%"
     h="100%">
@@ -9,5 +9,3 @@ const CenterLoader = () => (
     </Stack>
   </Center>
 );
-
-export default CenterLoader;

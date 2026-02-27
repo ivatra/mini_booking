@@ -7,7 +7,7 @@ interface IProps {
   disabled?: boolean;
 }
 
-const NavigateButton = ({ text, goTo, disabled }: IProps) => {
+export const NavigateButton = ({ text, goTo, disabled }: IProps) => {
   const navigate = useNavigate();
 
   return (
@@ -20,5 +20,3 @@ const NavigateButton = ({ text, goTo, disabled }: IProps) => {
     </Button>
   );
 };
-
-export default NavigateButton;

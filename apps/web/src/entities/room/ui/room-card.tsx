@@ -11,7 +11,7 @@ interface IProps {
   isEditMode: boolean;
 }
 
-const RoomCard = ({
+export const RoomCard = ({
   room,
   hasAvaliableBooking,
   navigateOnClickTo,
@@ -46,5 +46,3 @@ const RoomCard = ({
     </Stack>
   );
 };
-
-export default RoomCard;

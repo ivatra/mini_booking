@@ -20,7 +20,7 @@ type AnalyticsEventMap = {
   };
 };
 
-const analytics = {
+export const analytics = {
   started: false,
   init() {
     const key = import.meta.env.VITE_POSTHOG_KEY;
@@ -52,5 +52,3 @@ const analytics = {
     }
   },
 };
-
-export default analytics;

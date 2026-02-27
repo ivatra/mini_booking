@@ -7,7 +7,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 import s from "./booking-page.module.css";
 import BookingsNotFoundMessage from "./bookings-not-found-message";
 
-const BookingPage = () => {
+export const BookingPage = () => {
   const [searchParams] = useSearchParams();
   const checkIn = searchParams.get("in");
   const checkOut = searchParams.get("out");
@@ -93,5 +93,3 @@ const BookingPage = () => {
     </Stack>
   );
 };
-
-export default BookingPage;

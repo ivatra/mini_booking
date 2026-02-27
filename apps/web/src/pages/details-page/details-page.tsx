@@ -7,7 +7,7 @@ import s from "./details-page.module.css";
 import { buildRoomLink } from "./helpers";
 import useDetailsPage from "./use-details-page";
 
-const DetailsPage = () => {
+export const DetailsPage = () => {
   const { date, hotel, rooms, loading, error, setDate } = useDetailsPage();
 
   if (loading) return <CenterLoader />;
@@ -49,5 +49,3 @@ const DetailsPage = () => {
     </Stack>
   );
 };
-
-export default DetailsPage;

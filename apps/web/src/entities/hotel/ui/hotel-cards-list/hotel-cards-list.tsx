@@ -7,7 +7,7 @@ interface IProps {
   hotels: IHotel[];
 }
 
-const HotelCardsList = ({ hotels }: IProps) => (
+export const HotelCardsList = ({ hotels }: IProps) => (
   <GridList>
     {hotels.map((hotel) => (
       <HotelCard
@@ -17,5 +17,3 @@ const HotelCardsList = ({ hotels }: IProps) => (
     ))}
   </GridList>
 );
-
-export default HotelCardsList;

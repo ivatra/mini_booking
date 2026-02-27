@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import Header from "./header";
 import { calcCountOfRooms } from "./helpers";
 
-const HomePage = () => {
+export const HomePage = () => {
   const { hotels, loading, error, getHotels } = useHotelsStore();
 
   useEffect(() => {
@@ -32,5 +32,3 @@ const HomePage = () => {
     </Box>
   );
 };
-
-export default HomePage;

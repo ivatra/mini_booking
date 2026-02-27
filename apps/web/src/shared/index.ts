@@ -1,12 +1,12 @@
-﻿export { default as analytics } from "./analytics";
+﻿export { analytics } from "./analytics";
 
-export { default as useDateRangeStore } from "./data/use-date-range-store";
-export { default as useAsyncAction } from "./data/use-async-action";
+export { useDateRangeStore } from "./data/use-date-range-store";
+export { useAsyncAction } from "./data/use-async-action";
 
-export { default as NavigateButton } from "./ui/navigate-button";
-export { default as ErrorMessage } from "./ui/error-message";
-export { default as CenterLoader } from "./ui/center-loader";
-export { default as GridList } from "./ui/grid-list";
+export { NavigateButton } from "./ui/navigate-button";
+export { ErrorMessage } from "./ui/error-message";
+export { CenterLoader } from "./ui/center-loader";
+export { GridList } from "./ui/grid-list";
 
 export { isRangeOverlap } from "./mock-data/helpers";
 export { MOCK_HOTELS } from "./mock-data/hotels";

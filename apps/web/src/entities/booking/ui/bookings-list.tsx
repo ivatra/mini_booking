@@ -8,7 +8,7 @@ interface IProps {
   highlightCardId?: string;
 }
 
-const BookingsList = ({ bookings, highlightCardId }: IProps) => (
+export const BookingsList = ({ bookings, highlightCardId }: IProps) => (
   <GridList>
     {bookings.map((booking) => (
       <BookingCard
@@ -19,5 +19,3 @@ const BookingsList = ({ bookings, highlightCardId }: IProps) => (
     ))}
   </GridList>
 );
-
-export default BookingsList;

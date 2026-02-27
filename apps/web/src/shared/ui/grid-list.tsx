@@ -6,7 +6,7 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const GridList = ({ children }: IProps) => (
+export const GridList = ({ children }: IProps) => (
   <Box className={s.scrollWrapper}>
     <Paper
       className={s.grid}
@@ -15,5 +15,3 @@ const GridList = ({ children }: IProps) => (
     </Paper>
   </Box>
 );
-
-export default GridList;

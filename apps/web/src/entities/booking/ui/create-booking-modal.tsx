@@ -11,7 +11,7 @@ interface IProps {
   onClose: () => void;
 }
 
-const CreateBookingModal = ({ opened, onClose }: IProps) => {
+export const CreateBookingModal = ({ opened, onClose }: IProps) => {
   const {
     dates,
     error,
@@ -103,5 +103,3 @@ const CreateBookingModal = ({ opened, onClose }: IProps) => {
     </Modal>
   );
 };
-
-export default CreateBookingModal;
