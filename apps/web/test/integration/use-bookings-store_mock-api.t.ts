@@ -16,7 +16,7 @@ describe("useBookingsStore and mock-api", () => {
 
     useBookingsStore.setState({
       bookings: [],
-      subscriptions: new Map(),
+      subscription: null,
       loading: 0,
       error: null,
     });
@@ -54,10 +54,11 @@ describe("useBookingsStore and mock-api", () => {
     vi.useFakeTimers();
     vi.spyOn(Math, "random").mockReturnValue(0);
 
-    vi.useFakeTimers();
-    vi.spyOn(Math, "random").mockReturnValue(0);
-
-    useBookingsStore.getState().subscribeToRoomBookingStatusChange("room-101");
+    const firstSubscribe = useBookingsStore
+      .getState()
+      .subscribeToRoomBookingStatusChange("room-101");
+    await vi.advanceTimersByTimeAsync(301);
+    await firstSubscribe;
 
     await vi.advanceTimersByTimeAsync(30001);
 
@@ -65,7 +66,11 @@ describe("useBookingsStore and mock-api", () => {
       .getState()
       .bookings.find((booking) => booking.id === "booking-1")?.status;
 
-    useBookingsStore.getState().subscribeToRoomBookingStatusChange("room-101");
+    const secondSubscribe = useBookingsStore
+      .getState()
+      .subscribeToRoomBookingStatusChange("room-101");
+    await vi.advanceTimersByTimeAsync(301);
+    await secondSubscribe;
     await vi.advanceTimersByTimeAsync(30001);
 
     const afterStatus = useBookingsStore
@@ -76,8 +81,6 @@ describe("useBookingsStore and mock-api", () => {
     expect(afterStatus).toBeDefined();
     expect(afterStatus).not.toBe(beforeStatus);
 
-    useBookingsStore
-      .getState()
-      .unSubscribeFromRoomBookingStatusChange("room-101");
+    useBookingsStore.getState().unSubscribeFromRoomBookingStatusChange();
   });
 });

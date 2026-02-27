@@ -30,3 +30,27 @@
   font-weight: 600;
   color: light-dark(var(--mantine-color-dark-6), var(--mantine-color-gray-3));
 }
+
+.refresh_button {
+  font-weight: 600;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.refresh_button:hover {
+  background: color-mix(in srgb, var(--mantine-color-green-6) 18%, transparent);
+}
+
+.refresh_tooltip {
+  max-width: clamp(220px, 70vw, 320px);
+  white-space: normal;
+  text-wrap: pretty;
+  line-height: clamp(1.35, 1.2 + 0.5vw, 1.5);
+}
+
+@media (max-width: 48em) {
+  .refresh_tooltip {
+    max-width: min(88vw, 280px);
+    line-height: 1.45;
+  }
+}

@@ -1,3 +1,6 @@
+import type { ISubscriptionStore } from "@shared";
+import type { StoreApi } from "zustand";
+
 export type TBookingStatus = "avaliable" | "busy";
 export interface IBooking {
   id: string;
@@ -22,8 +25,14 @@ export interface ICreateBookingParams {
   status: TBookingStatus;
 }
 
-export interface IUseBookingsStore {
-  subscriptions: Map<string, () => void>;
+type TSubscriptionField = {
+  subscription: {
+    currentRoomId: string;
+    room: StoreApi<ISubscriptionStore>;
+  } | null;
+};
+
+export interface IUseBookingsStore extends TSubscriptionField {
   bookings: IBooking[];
   loading: number;
   error: string | null;
@@ -37,9 +46,9 @@ export interface IUseBookingsStore {
 
   _updateBookingStatus: (bookingId: string, status: TBookingStatus) => void;
 
-  subscribeToRoomBookingStatusChange: (roomid: string) => void;
-  unSubscribeFromRoomBookingStatusChange: (roomId: string) => void;
-  unSubscribeFromAllRoomsBookingStatusChange: () => void;
+  subscribeToRoomBookingStatusChange: (roomId: string) => Promise<void>;
+  unSubscribeFromRoomBookingStatusChange: () => void;
+  refreshRoomBookingStatusSubscription: () => Promise<void>;
 }
 
 export interface IApi {
@@ -54,7 +63,7 @@ export interface IApi {
   subscribeToRoomBookingStatusChange: (
     roomid: string,
     onUpdate: (bookingId: string, status: TBookingStatus) => void,
-  ) => () => void; // возвращает unsubscribe функцию
+  ) => Promise<() => void>; // возвращает unsubscribe функцию
 }
 
 export interface CreateBookingModalStore {

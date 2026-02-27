@@ -67,11 +67,11 @@ export const api: IApi = {
 
     return newBooking;
   },
-
-  subscribeToRoomBookingStatusChange: (
+  subscribeToRoomBookingStatusChange: async (
     roomId: string,
     onUpdate: (bookingId: string, status: TBookingStatus) => void,
   ) => {
+    await new Promise((resolve) => setTimeout(resolve, 300));
     const interval = setInterval(() => {
       const roomBookings = MOCK_BOOKING.filter((b) => b.roomId === roomId);
 

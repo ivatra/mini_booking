@@ -1,4 +1,4 @@
-import { analytics, getEnvVar } from "@shared";
+import { analytics, createSubscriptionStore, getEnvVar } from "@shared";
 import { create } from "zustand";
 
 import { api } from "./mock-api";
@@ -6,9 +6,9 @@ import type { IUseBookingsStore } from "./types";
 
 export const useBookingsStore = create<IUseBookingsStore>((set, get) => ({
   bookings: [],
-  subscriptions: new Map(),
   loading: 0,
   error: null,
+  subscription: null,
 
   getBookings: async (params) => {
     set((st) => ({ loading: st.loading + 1, error: null }));
@@ -83,6 +83,7 @@ export const useBookingsStore = create<IUseBookingsStore>((set, get) => ({
       }
     }
   },
+
   createBooking: async (params) => {
     try {
       const newBooking = await api.createBooking(params);
@@ -103,31 +104,52 @@ export const useBookingsStore = create<IUseBookingsStore>((set, get) => ({
     }
   },
 
-  subscribeToRoomBookingStatusChange: (roomId: string) => {
-    if (get().subscriptions.has(roomId)) return;
+  subscribeToRoomBookingStatusChange: async (roomId: string) => {
+    const current = get().subscription;
 
-    const unsubscribe = api.subscribeToRoomBookingStatusChange(
-      roomId,
-      (bookingId, status) => {
+    if (current?.currentRoomId === roomId) {
+      await get().refreshRoomBookingStatusSubscription();
+      return;
+    }
+
+    current?.room.getState().disconnect();
+
+    const room = current?.room ?? createSubscriptionStore();
+
+    await room.getState().connect(() =>
+      api.subscribeToRoomBookingStatusChange(roomId, (bookingId, status) => {
         get()._updateBookingStatus(bookingId, status);
-      },
+      }),
     );
 
-    get().subscriptions.set(roomId, unsubscribe);
+    set({
+      subscription: {
+        currentRoomId: roomId,
+        room,
+      },
+    });
   },
 
-  unSubscribeFromRoomBookingStatusChange: (roomId: string) => {
-    const unsubscribe = get().subscriptions.get(roomId);
+  unSubscribeFromRoomBookingStatusChange: () => {
+    const current = get().subscription;
+    if (!current) return;
 
-    if (unsubscribe) {
-      unsubscribe();
-      get().subscriptions.delete(roomId);
-    }
+    current.room.getState().disconnect();
+    set({ subscription: null });
   },
 
-  unSubscribeFromAllRoomsBookingStatusChange: () => {
-    get().subscriptions.forEach((unsubscribe) => unsubscribe());
-    get().subscriptions.clear();
+  refreshRoomBookingStatusSubscription: async () => {
+    const current = get().subscription;
+    if (!current) return;
+
+    await current.room.getState().refresh(() =>
+      api.subscribeToRoomBookingStatusChange(
+        current.currentRoomId,
+        (bookingId, status) => {
+          get()._updateBookingStatus(bookingId, status);
+        },
+      ),
+    );
   },
 
   _updateBookingStatus: (bookingId, status) => {

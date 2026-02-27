@@ -6,6 +6,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 
 import s from "./booking-page.module.css";
 import BookingsNotFoundMessage from "./bookings-not-found-message";
+import RefreshSubscriptionButton from "./refresh-subscription-button";
 
 const BookingPage = () => {
   const [searchParams] = useSearchParams();
@@ -44,7 +45,7 @@ const BookingPage = () => {
     subscribeToRoomBookingStatusChange(roomId);
 
     return () => {
-      unSubscribeFromRoomBookingStatusChange(roomId);
+      unSubscribeFromRoomBookingStatusChange();
     };
   }, [
     roomId,
@@ -81,6 +82,7 @@ const BookingPage = () => {
             </Text>
           </Group>
         </Stack>
+        <RefreshSubscriptionButton />
       </Group>
       {!bookings.length ? (
         <BookingsNotFoundMessage hasDate={hasValidDate} />
