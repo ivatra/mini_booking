@@ -1,0 +1,64 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum BookingStatus {
+  avaliable
+  busy
+}
+
+model Hotel {
+  id        String   @id @db.VarChar(64)
+  name      String   @db.VarChar(255)
+  city      String   @db.VarChar(255)
+  address   String   @db.VarChar(255)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  rooms Room[]
+
+  @@map("hotels")
+}
+
+model Room {
+  id            String   @id @db.VarChar(64)
+  hotelId       String   @db.VarChar(64)
+  name          String   @db.VarChar(255)
+  capacity      Int
+  pricePerNight Int
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  hotel    Hotel     @relation(fields: [hotelId], references: [id], onDelete: Cascade)
+  bookings Booking[]
+
+  @@index([hotelId], map: "idx_rooms_hotel_id")
+  @@map("rooms")
+}
+
+model Booking {
+  id        String        @id @db.VarChar(64)
+  roomId    String        @db.VarChar(64)
+  checkIn   DateTime
+  checkOut  DateTime
+  status    BookingStatus @default(avaliable)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  room Room @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  @@index([roomId], map: "idx_bookings_room_id")
+  @@index([roomId, checkIn, checkOut], map: "idx_bookings_room_dates")
+  @@map("bookings")
+}
