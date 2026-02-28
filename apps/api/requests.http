@@ -1,0 +1,23 @@
+﻿### Health
+GET http://127.0.0.1:8080/api/health
+
+### Hotels list
+GET http://127.0.0.1:8080/api/hotels
+
+### Rooms by hotel
+GET http://127.0.0.1:8080/api/rooms?hotelId=hotel_1
+
+
+### Create booking
+POST http://127.0.0.1:8080/api/bookings
+content-type: application/json
+
+{
+  "roomId": "room_1",
+  "guestName": "Ivan Petrov",
+  "checkIn": "2026-03-10",
+  "checkOut": "2026-03-12"
+}
+
+### Bookings List
+GET http://127.0.0.1:8080/api/bookings
