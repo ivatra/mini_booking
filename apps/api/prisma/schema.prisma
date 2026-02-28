@@ -50,8 +50,8 @@ model Room {
 model Booking {
   id        String        @id @db.VarChar(64)
   roomId    String        @db.VarChar(64)
-  checkIn   DateTime
-  checkOut  DateTime
+  checkIn   DateTime      @db.Date
+  checkOut  DateTime      @db.Date
   status    BookingStatus @default(avaliable)
   createdAt DateTime      @default(now())
   updatedAt DateTime      @updatedAt
