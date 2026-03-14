@@ -20,7 +20,6 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
@@ -30,11 +29,9 @@
       "@pages": ["src/pages/index.ts"],
       "@entities": ["src/entities/index.ts"],
       "@shared": ["src/shared/index.ts"],
-
+      "@graphql": ["src/shared/graphql/index.ts"],
       "@shared/ui-kit": ["src/shared/ui-kit.ts"],
-      "@shared/icons": ["src/shared/icons.ts"],
-      "@shared/graphql/client": ["src/shared/graphql/client.ts"],
-      "@shared/graphql/queries": ["src/shared/graphql/queries.ts"]
+      "@shared/icons": ["src/shared/icons.ts"]
     }
   },
   "include": ["src"]

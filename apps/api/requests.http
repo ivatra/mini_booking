@@ -1,23 +1,81 @@
-﻿### Health
-GET http://127.0.0.1:8080/api/health
+﻿### GRAPHQL TESTS
 
-### Hotels list
-GET http://127.0.0.1:8080/api/hotels
-
-### Rooms by hotel
-GET http://127.0.0.1:8080/api/rooms?hotelId=hotel_1
-
-
-### Create booking
-POST http://127.0.0.1:8080/api/bookings
+### 1. GraphQL - Get All Hotels with Cities
+POST http://127.0.0.1:8080/api/graphql
 content-type: application/json
 
 {
-  "roomId": "room_1",
-  "guestName": "Ivan Petrov",
-  "checkIn": "2026-03-10",
-  "checkOut": "2026-03-12"
+  "query": "query GetHotels { hotels { id name city } }"
 }
 
-### Bookings List
-GET http://127.0.0.1:8080/api/bookings
+### 2. GraphQL - Get Hotel with Rooms
+POST http://127.0.0.1:8080/api/graphql
+content-type: application/json
+
+{
+  "query": "query GetHotelWithRooms { hotel(id: \"hotel-1\") { id name city rooms { id name capacity pricePerNight } } }"
+}
+
+### 3. GraphQL - Get Rooms for Hotel
+POST http://127.0.0.1:8080/api/graphql
+content-type: application/json
+
+{
+  "query": "query GetRooms { rooms(hotelId: \"hotel-1\") { id name capacity pricePerNight isAvailable } }"
+}
+
+### 4. GraphQL - Get Room with Availability (no dates)
+POST http://127.0.0.1:8080/api/graphql
+content-type: application/json
+
+{
+  "query": "query GetRoom { room(id: \"room-101\") { id name capacity pricePerNight isAvailable } }"
+}
+
+### 5. GraphQL - Get Room Availability (specific dates)
+POST http://127.0.0.1:8080/api/graphql
+content-type: application/json
+
+{
+  "query": "query GetRoomAvailability { room(id: \"room-101\") { id name isAvailable(checkIn: \"2026-03-25\", checkOut: \"2026-03-27\") } }"
+}
+
+### 6. GraphQL - Get Bookings for Room
+POST http://127.0.0.1:8080/api/graphql
+content-type: application/json
+
+{
+  "query": "query GetBookings { bookings(roomId: \"room-101\") { id roomId checkIn checkOut status room { id name } } }"
+}
+
+### 7. GraphQL - Get Single Booking
+POST http://127.0.0.1:8080/api/graphql
+content-type: application/json
+
+{
+  "query": "query GetBooking { booking(id: \"booking-1\") { id roomId checkIn checkOut status room { id name } } }"
+}
+
+### 8. GraphQL - Create Booking Mutation
+POST http://127.0.0.1:8080/api/graphql
+content-type: application/json
+
+{
+  "query": "mutation CreateBooking { createBooking(roomId: \"room-202\", checkIn: \"2026-04-05\", checkOut: \"2026-04-07\") { id roomId checkIn checkOut status } }"
+}
+
+### 9. GraphQL - Confirm Booking
+POST http://127.0.0.1:8080/api/graphql
+content-type: application/json
+
+{
+  "query": "mutation ConfirmBooking { confirmBooking(bookingId: \"booking-1\") }"
+}
+
+### 10. GraphQL - Cancel Booking
+POST http://127.0.0.1:8080/api/graphql
+content-type: application/json
+
+{
+  "query": "mutation CancelBooking { cancelBooking(bookingId: \"booking-4\") }"
+}

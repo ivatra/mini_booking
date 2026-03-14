@@ -1,3 +1,5 @@
+export { GET_BOOKINGS_BY_ROOM } from "../room";
+
 export { CreateBookingModal } from "./ui/create-booking-modal";
 
 export { useManageBookingModalStore } from "./data/use-manage-booking-modal-store";

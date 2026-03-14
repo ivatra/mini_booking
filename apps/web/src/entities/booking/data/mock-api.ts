@@ -1,95 +1,102 @@
-import { isRangeOverlap } from "@shared";
-import { client } from "@shared/graphql/client";
-import {
-  CANCEL_BOOKING,
-  CONFIRM_BOOKING,
-  CREATE_BOOKING,
-  GET_BOOKINGS_BY_ROOM,
-} from "@shared/graphql/queries";
+import { isRangeOverlap, MOCK_BOOKING } from "@shared";
 
+import { generateId } from "./helpers";
 import type { IApi, IBooking, TBookingStatus } from "./types";
 
 export const api: IApi = {
   getBookings: async ({ roomId, date }) => {
-    try {
-      const response = await client.query({
-        query: GET_BOOKINGS_BY_ROOM,
-        variables: { roomId },
-      });
-      const data = response.data as any;
+    const bookings = MOCK_BOOKING.filter((b) => {
+      if (b.roomId !== roomId) return false;
+      if (!date) return true;
 
-      const bookings: IBooking[] = data.bookings.filter((b: any) => {
-        if (!date) return true;
+      return isRangeOverlap(date.checkIn, date.checkOut, b.checkIn, b.checkOut);
+    });
 
-        return isRangeOverlap(
-          date.checkIn,
-          date.checkOut,
-          b.checkIn,
-          b.checkOut,
-        );
-      });
+    await new Promise((resolve) => setTimeout(resolve, 250));
 
-      return bookings;
-    } catch (error) {
-      throw error;
-    }
+    return bookings;
   },
-
   book: async (bookingId: string) => {
-    try {
-      await client.mutate({
-        mutation: CONFIRM_BOOKING,
-        variables: { bookingId },
-      });
-    } catch (error) {
-      throw new Error("Не удалось забронировать номер");
-    }
+    const booking = MOCK_BOOKING.find((b) => b.id === bookingId);
+
+    if (!booking) throw new Error("Бронирование не найдено");
+
+    booking.status = "busy";
+    await new Promise((resolve) => setTimeout(resolve, 300));
   },
 
   cancelBook: async (bookingId: string) => {
-    try {
-      await client.mutate({
-        mutation: CANCEL_BOOKING,
-        variables: { bookingId },
-      });
-    } catch (error) {
-      throw new Error("Не удалось отменить бронирование");
-    }
+    const booking = MOCK_BOOKING.find((b) => b.id === bookingId);
+
+    if (!booking) throw new Error("Бронирование не найдено");
+
+    booking.status = "avaliable";
+    await new Promise((resolve) => setTimeout(resolve, 300));
   },
 
   createBooking: async ({ roomId, checkIn, checkOut, status }) => {
-    try {
-      const response = await client.mutate({
-        mutation: CREATE_BOOKING,
-        variables: {
-          roomId,
-          checkIn,
-          checkOut,
-        },
-      });
-      const data = response.data as any;
+    const hasConflict = MOCK_BOOKING.some((booking) => {
+      if (booking.roomId !== roomId) return false;
 
-      return {
-        id: data.createBooking.id,
-        roomId: data.createBooking.roomId,
-        checkIn: data.createBooking.checkIn,
-        checkOut: data.createBooking.checkOut,
-        status: status,
-        createdAt: data.createBooking.createdAt,
-      };
-    } catch (error) {
+      return isRangeOverlap(
+        checkIn,
+        checkOut,
+        booking.checkIn,
+        booking.checkOut,
+      );
+    });
+
+    if (hasConflict) {
       throw new Error(
         "Бронирования не должны пересекаться. В этот период уже есть бронь для этого номера",
       );
     }
-  },
 
-  subscribeToRoomBookingStatusChange: (
-    _roomId: string,
-    _onUpdate: (bookingId: string, status: TBookingStatus) => void,
+    const newBooking: IBooking = {
+      id: generateId(),
+      roomId,
+      checkIn,
+      checkOut,
+      status,
+      createdAt: new Date().toISOString(),
+    };
+
+    MOCK_BOOKING.push(newBooking);
+
+    await new Promise((resolve) => setTimeout(resolve, 300));
+
+    return newBooking;
+  },
+  subscribeToRoomBookingStatusChange: async (
+    roomId: string,
+    onUpdate: (bookingId: string, status: TBookingStatus) => void,
   ) => {
-    // Real-time subscription would use GraphQL subscriptions via WebSocket
-    // For now, return a no-op unsubscribe function
-    return () => {};
+    await new Promise((resolve) => setTimeout(resolve, 300));
+    const interval = setInterval(() => {
+      const roomBookings = MOCK_BOOKING.filter((b) => b.roomId === roomId);
+
+      if (roomBookings.length === 0) return;
+
+      const randomIndex = Math.floor(Math.random() * roomBookings.length);
+      const randomBooking = roomBookings[randomIndex];
+
+      const newStatus = randomBooking.status === "busy" ? "avaliable" : "busy";
+
+      randomBooking.status = newStatus;
+
+      console.log(
+        `[MOCK] Booking ${randomBooking.id} status changed to ${newStatus}`,
+      );
+
+      onUpdate(randomBooking.id, newStatus);
+    }, 30000);
+
+    console.log(`[MOCK] Subscribed to room ${roomId}`);
+
+    return async () => {
+      await new Promise((resolve) => setTimeout(resolve, 300));
+      console.log(`[MOCK] Unsubscribed from room ${roomId}`);
+      clearInterval(interval);
+    };
   },
 };

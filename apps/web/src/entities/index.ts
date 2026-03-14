@@ -9,5 +9,6 @@ export {
   BookingsList,
   useManageBookingModalStore,
   CreateBookingModal,
+  GET_BOOKINGS_BY_ROOM,
 } from "./booking";
 export type { IBooking, IGetBookingsParams } from "./booking";

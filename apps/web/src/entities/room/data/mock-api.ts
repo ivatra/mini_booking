@@ -1,104 +1,57 @@
-import { gql } from "@apollo/client";
-import { isRangeOverlap } from "@shared";
-import { client } from "@shared/graphql/client";
-import { GET_BOOKINGS_BY_ROOM, GET_ROOMS } from "@shared/graphql/queries";
+import { isRangeOverlap, MOCK_BOOKING, MOCK_ROOMS } from "@shared";
 
-import type { IApi, IRoom } from "./types";
-
-const GET_ROOM = gql`
-  query GetRoom($id: ID!) {
-    room(id: $id) {
-      id
-      hotelId
-      name
-      capacity
-      pricePerNight
-      bookings {
-        id
-        status
-        checkIn
-        checkOut
-      }
-    }
-  }
-`;
+import type { IApi } from "./types";
 
 export const api: IApi = {
   getRooms: async (params) => {
     const { range, hotelId } = params;
 
-    try {
-      const response = await client.query({
-        query: GET_ROOMS,
-        variables: { hotelId },
-      });
-      const data = response.data as any;
+    const rooms = MOCK_ROOMS.filter((room) => room.hotelId === hotelId);
 
-      const rooms: IRoom[] = await Promise.all(
-        (data.rooms as any[]).map(async (room: any) => {
-          const bookResponse = await client.query({
-            query: GET_BOOKINGS_BY_ROOM,
-            variables: { roomId: room.id },
-          });
-          const bookingsData = bookResponse.data as any;
-          const bookings = bookingsData.bookings;
+    await new Promise((resolve) => setTimeout(resolve, 250));
 
-          const hasAvaliableBooking = bookings.some((booking: any) => {
-            if (booking.status === "busy") return false;
-            if (!range) return true;
+    return rooms
+      .map((room) => {
+        const hasAvaliableBooking = MOCK_BOOKING.some((booking) => {
+          if (booking.roomId !== room.id || booking.status === "busy")
+            return false;
 
-            return isRangeOverlap(
-              range.checkIn,
-              range.checkOut,
-              booking.checkIn,
-              booking.checkOut,
-            );
-          });
+          if (!range) return true;
 
-          return {
-            id: room.id,
-            hotelId: room.hotelId,
-            name: room.name,
-            capacity: room.capacity,
-            pricePerNight: room.pricePerNight,
-            hasAvaliableBooking,
-          };
-        }),
-      );
+          return isRangeOverlap(
+            range.checkIn,
+            range.checkOut,
+            booking.checkIn,
+            booking.checkOut,
+          );
+        });
 
-      return rooms.sort((a, b) => {
+        return {
+          ...room,
+          hasAvaliableBooking,
+        };
+      })
+      .sort((a, b) => {
+        // Свободные комнаты первыми
         return Number(b.hasAvaliableBooking) - Number(a.hasAvaliableBooking);
       });
-    } catch (error) {
-      throw error;
-    }
   },
-
   getRoomById: async (id) => {
-    try {
-      const response = await client.query({
-        query: GET_ROOM,
-        variables: { id },
-      });
-      const data = response.data as any;
-      const room = data.room;
+    const room = MOCK_ROOMS.find((r) => r.id === id);
 
-      if (!room) return null;
+    if (!room) return null;
 
-      const hasAvaliableBooking = room.bookings.some((booking: any) => {
-        return booking.status !== "busy";
-      });
+    await new Promise((resolve) => setTimeout(resolve, 250));
 
-      return {
-        id: room.id,
-        hotelId: room.hotelId,
-        name: room.name,
-        capacity: room.capacity,
-        pricePerNight: room.pricePerNight,
-        hasAvaliableBooking,
-      };
-    } catch (error) {
-      return null;
-    }
+    const hasAvaliableBooking = MOCK_BOOKING.some((booking) => {
+      if (booking.roomId !== room.id || booking.status === "busy") return false;
+
+      return true;
+    });
+
+    return {
+      ...room,
+      hasAvaliableBooking,
+    };
   },
 };

@@ -155,11 +155,13 @@ The seed script is located in `src/seed.ts`.
 For production, ensure the following environment variables are set:
 
 ### API
+
 - `DATABASE_URL`: PostgreSQL connection string
 - `CORS_ORIGIN`: Frontend URL
 - `NODE_ENV=production`
 
 ### Frontend
+
 - `VITE_API_URL`: Backend GraphQL endpoint
 
 ## Troubleshooting

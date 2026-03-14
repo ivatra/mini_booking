@@ -1,7 +1,7 @@
 import { analytics, getEnvVar } from "@shared";
 import { create } from "zustand";
 
-import { api } from "./mock-api";
+import { api } from "./api";
 import type { IUseBookingsStore } from "./types";
 
 export const useBookingsStore = create<IUseBookingsStore>((set, get) => ({
@@ -87,6 +87,10 @@ export const useBookingsStore = create<IUseBookingsStore>((set, get) => ({
     try {
       const newBooking = await api.createBooking(params);
 
+      if (!newBooking) {
+        throw new Error("Не удалось создать бронирование");
+      }
+
       set((st) => ({
         bookings: [...st.bookings, newBooking],
       }));
@@ -103,10 +107,10 @@ export const useBookingsStore = create<IUseBookingsStore>((set, get) => ({
     }
   },
 
-  subscribeToRoomBookingStatusChange: (roomId: string) => {
+  subscribeToRoomBookingStatusChange: async (roomId: string) => {
     if (get().subscriptions.has(roomId)) return;
 
-    const unsubscribe = api.subscribeToRoomBookingStatusChange(
+    const unsubscribe = await api.subscribeToRoomBookingStatusChange(
       roomId,
       (bookingId, status) => {
         get()._updateBookingStatus(bookingId, status);

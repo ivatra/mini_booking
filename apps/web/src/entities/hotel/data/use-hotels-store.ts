@@ -1,7 +1,7 @@
 import { getEnvVar } from "@shared";
 import { create } from "zustand";
 
-import { api } from "./mock-api";
+import { api } from "./api";
 import type { IUseHotelsStore } from "./types";
 
 export const useHotelsStore = create<IUseHotelsStore>((set) => ({

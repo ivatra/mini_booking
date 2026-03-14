@@ -4,7 +4,7 @@ import type { Hotel } from "./hotel.types.js";
 
 export class HotelService {
   async getAll(): Promise<Hotel[]> {
-    const hotels = await prisma.hotel.findMany({});
+    const hotels = await prisma.hotel.findMany();
 
     return hotels.map((hotel) => ({
       id: hotel.id,
