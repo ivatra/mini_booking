@@ -17,14 +17,8 @@ export default defineConfig({
       "@pages": resolve(__dirname, "src/pages"),
       "@entities": resolve(__dirname, "src/entities"),
       "@shared": resolve(__dirname, "src/shared"),
-      "@shared/graphql/client": resolve(
-        __dirname,
-        "src/shared/graphql/client.ts",
-      ),
-      "@shared/graphql/queries": resolve(
-        __dirname,
-        "src/shared/graphql/queries.ts",
-      ),
+      "@shared/graphql/client": resolve(__dirname, "src/shared/graphql/client.ts"),
+      "@shared/graphql/queries": resolve(__dirname, "src/shared/graphql/queries.ts"),
     },
   },
   test: USER_CONFIG,

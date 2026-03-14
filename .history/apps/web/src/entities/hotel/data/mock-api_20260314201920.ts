@@ -6,11 +6,11 @@ import type { IApi, IHotel } from "./types";
 export const api: IApi = {
   getHotels: async () => {
     try {
-      const response = await client.query({
+      const { data } = await client.query({
         query: GET_HOTELS,
       });
-      const data = response.data as any;
 
+      // Transform the API response to match the expected frontend format
       const hotels: IHotel[] = data.hotels.map(
         (
           hotel: Omit<IHotel, "roomsLength"> & {

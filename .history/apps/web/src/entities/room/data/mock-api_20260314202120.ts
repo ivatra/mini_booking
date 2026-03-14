@@ -1,7 +1,8 @@
 import { gql } from "@apollo/client";
-import { isRangeOverlap } from "@shared";
+
 import { client } from "@shared/graphql/client";
 import { GET_BOOKINGS_BY_ROOM, GET_ROOMS } from "@shared/graphql/queries";
+import { isRangeOverlap } from "@shared";
 
 import type { IApi, IRoom } from "./types";
 
@@ -46,7 +47,6 @@ export const api: IApi = {
           const hasAvaliableBooking = bookings.some((booking: any) => {
             if (booking.status === "busy") return false;
             if (!range) return true;
-
             return isRangeOverlap(
               range.checkIn,
               range.checkOut,

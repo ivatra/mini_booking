@@ -1,4 +1,3 @@
-import { isRangeOverlap } from "@shared";
 import { client } from "@shared/graphql/client";
 import {
   CANCEL_BOOKING,
@@ -6,6 +5,7 @@ import {
   CREATE_BOOKING,
   GET_BOOKINGS_BY_ROOM,
 } from "@shared/graphql/queries";
+import { isRangeOverlap } from "@shared";
 
 import type { IApi, IBooking, TBookingStatus } from "./types";
 
@@ -21,12 +21,7 @@ export const api: IApi = {
       const bookings: IBooking[] = data.bookings.filter((b: any) => {
         if (!date) return true;
 
-        return isRangeOverlap(
-          date.checkIn,
-          date.checkOut,
-          b.checkIn,
-          b.checkOut,
-        );
+        return isRangeOverlap(date.checkIn, date.checkOut, b.checkIn, b.checkOut);
       });
 
       return bookings;

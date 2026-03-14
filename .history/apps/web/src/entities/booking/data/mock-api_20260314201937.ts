@@ -1,4 +1,3 @@
-import { isRangeOverlap } from "@shared";
 import { client } from "@shared/graphql/client";
 import {
   CANCEL_BOOKING,
@@ -6,26 +5,26 @@ import {
   CREATE_BOOKING,
   GET_BOOKINGS_BY_ROOM,
 } from "@shared/graphql/queries";
+import { isRangeOverlap } from "@shared";
 
 import type { IApi, IBooking, TBookingStatus } from "./types";
 
 export const api: IApi = {
   getBookings: async ({ roomId, date }) => {
     try {
-      const response = await client.query({
+      const { data } = await client.query({
         query: GET_BOOKINGS_BY_ROOM,
         variables: { roomId },
       });
-      const data = response.data as any;
 
       const bookings: IBooking[] = data.bookings.filter((b: any) => {
         if (!date) return true;
 
         return isRangeOverlap(
-          date.checkIn,
-          date.checkOut,
-          b.checkIn,
-          b.checkOut,
+          new Date(date.checkIn),
+          new Date(date.checkOut),
+          new Date(b.checkIn),
+          new Date(b.checkOut),
         );
       });
 
@@ -59,7 +58,7 @@ export const api: IApi = {
 
   createBooking: async ({ roomId, checkIn, checkOut, status }) => {
     try {
-      const response = await client.mutate({
+      const { data } = await client.mutate({
         mutation: CREATE_BOOKING,
         variables: {
           roomId,
@@ -67,7 +66,6 @@ export const api: IApi = {
           checkOut,
         },
       });
-      const data = response.data as any;
 
       return {
         id: data.createBooking.id,
@@ -91,5 +89,27 @@ export const api: IApi = {
     // Real-time subscription would use GraphQL subscriptions via WebSocket
     // For now, return a no-op unsubscribe function
     return () => {};
+  },
+};
+
+      const randomBooking = roomBookings[randomIndex];
+
+      const newStatus = randomBooking.status === "busy" ? "avaliable" : "busy";
+
+      randomBooking.status = newStatus;
+
+      console.log(
+        `[MOCK] Booking ${randomBooking.id} status changed to ${newStatus}`,
+      );
+
+      onUpdate(randomBooking.id, newStatus);
+    }, 30000);
+
+    console.log(`[MOCK] Subscribed to room ${roomId}`);
+
+    return () => {
+      console.log(`[MOCK] Unsubscribed from room ${roomId}`);
+      clearInterval(interval);
+    };
   },
 };

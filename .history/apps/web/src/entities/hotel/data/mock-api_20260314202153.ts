@@ -1,6 +1,5 @@
 import { client } from "@shared/graphql/client";
 import { GET_HOTELS } from "@shared/graphql/queries";
-
 import type { IApi, IHotel } from "./types";
 
 export const api: IApi = {
@@ -12,11 +11,7 @@ export const api: IApi = {
       const data = response.data as any;
 
       const hotels: IHotel[] = data.hotels.map(
-        (
-          hotel: Omit<IHotel, "roomsLength"> & {
-            rooms?: Array<{ id: string }>;
-          },
-        ) => ({
+        (hotel: Omit<IHotel, "roomsLength"> & { rooms?: Array<{ id: string }> }) => ({
           id: hotel.id,
           name: hotel.name,
           city: hotel.city,
