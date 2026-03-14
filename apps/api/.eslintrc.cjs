@@ -1,4 +1,5 @@
 module.exports = {
+  ignorePatterns: [".eslintrc.cjs", "prisma.config.ts"],
   root: true,
   env: {
     es2023: true,

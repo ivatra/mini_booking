@@ -101,7 +101,7 @@ export class BookingService {
       status: booking.status,
       createdAt: booking.createdAt.toISOString(),
       updatedAt: booking.updatedAt.toISOString(),
-    } as Booking;
+    };
   }
 
   public async book(bookingId: string): Promise<void> {

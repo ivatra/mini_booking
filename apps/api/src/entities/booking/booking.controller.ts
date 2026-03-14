@@ -7,13 +7,13 @@ export class BookingController {
   constructor(private readonly bookingService: BookingService) {}
 
   getAll = async (_request: FastifyRequest, reply: FastifyReply) => {
-    return reply.send(this.bookingService.list());
+    return reply.send(await this.bookingService.list());
   };
   public create = async (
     request: FastifyRequest<{ Body: CreateBookingInput }>,
     reply: FastifyReply,
   ) => {
-    const booking = this.bookingService.create(request.body);
+    const booking = await this.bookingService.create(request.body);
 
     return reply.status(201).send(booking);
   };

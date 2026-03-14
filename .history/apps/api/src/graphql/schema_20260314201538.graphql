@@ -1,0 +1,51 @@
+type Hotel {
+  id: ID!
+  name: String!
+  city: String!
+  address: String!
+  createdAt: String!
+  rooms: [Room!]!
+}
+
+type Room {
+  id: ID!
+  hotelId: ID!
+  name: String!
+  capacity: Int!
+  pricePerNight: Int!
+  createdAt: String!
+  updatedAt: String!
+  hotel: Hotel!
+  bookings: [Booking!]!
+}
+
+type Booking {
+  id: ID!
+  roomId: ID!
+  checkIn: String!
+  checkOut: String!
+  status: BookingStatus!
+  createdAt: String!
+  updatedAt: String!
+  room: Room!
+}
+
+enum BookingStatus {
+  avaliable
+  busy
+}
+
+type Query {
+  hotels: [Hotel!]!
+  hotel(id: ID!): Hotel
+  rooms(hotelId: ID!): [Room!]!
+  room(id: ID!): Room
+  bookings(roomId: ID!): [Booking!]!
+  booking(id: ID!): Booking
+}
+
+type Mutation {
+  createBooking(roomId: ID!, checkIn: String!, checkOut: String!): Booking!
+  cancelBooking(bookingId: ID!): Boolean!
+  confirmBooking(bookingId: ID!): Boolean!
+}

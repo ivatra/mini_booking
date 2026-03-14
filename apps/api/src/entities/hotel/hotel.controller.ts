@@ -6,6 +6,6 @@ export class HotelController {
   constructor(private readonly hotelService: HotelService) {}
 
   getAll = async (_request: FastifyRequest, reply: FastifyReply) => {
-    return reply.send(this.hotelService.getAll());
+    return reply.send(await this.hotelService.getAll());
   };
 }

@@ -11,7 +11,6 @@ import { createRoomRoutes } from "@entities/room/room.routes.js";
 import { RoomService } from "@entities/room/room.service.js";
 
 import { graphqlRoutes } from "../graphql/server.js";
-
 import { healthRoutes } from "./health.routes.js";
 
 export const apiRoutes: FastifyPluginAsync = async (app) => {
@@ -24,7 +23,7 @@ export const apiRoutes: FastifyPluginAsync = async (app) => {
   const bookingController = new BookingController(bookingService);
 
   await app.register(healthRoutes);
-
+  
   // GraphQL endpoint
   await app.register(graphqlRoutes, {
     hotelService,
@@ -33,12 +32,8 @@ export const apiRoutes: FastifyPluginAsync = async (app) => {
   });
 
   // REST endpoints (kept for backward compatibility)
-  await app.register(createHotelRoutes(hotelController), {
-    prefix: "/rest/hotels",
-  });
-  await app.register(createRoomRoutes(roomController), {
-    prefix: "/rest/rooms",
-  });
+  await app.register(createHotelRoutes(hotelController), { prefix: "/rest/hotels" });
+  await app.register(createRoomRoutes(roomController), { prefix: "/rest/rooms" });
   await app.register(createBookingRoutes(bookingController), {
     prefix: "/rest/bookings",
   });

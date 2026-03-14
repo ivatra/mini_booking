@@ -1,4 +1,4 @@
-﻿import type { Room } from "generated/prisma/client";
+﻿import type { Room } from "../generated/prisma/client";
 
 export const MOCK_ROOMS: Omit<Room, "createdAt" | "updatedAt">[] = [
   {

@@ -1,17 +1,17 @@
 ﻿export interface Booking {
   id: string;
   roomId: string;
-  guestName?: string | undefined;
+  guestName?: string;
   checkIn: string;
   checkOut: string;
   status: "avaliable" | "busy";
   createdAt: string;
-  updatedAt?: string | undefined;
+  updatedAt?: string;
 }
 
 export interface CreateBookingInput {
   roomId: string;
-  guestName?: string | undefined;
+  guestName?: string;
   checkIn: string | Date;
   checkOut: string | Date;
   status?: "avaliable" | "busy";

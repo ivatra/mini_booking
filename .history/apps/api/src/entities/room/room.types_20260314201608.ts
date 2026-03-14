@@ -5,7 +5,7 @@
   capacity: number;
   pricePerNight: number;
   createdAt: string;
-  updatedAt?: string | undefined;
+  updatedAt?: string;
 }
 
 export interface CreateRoomInput {

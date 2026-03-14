@@ -1,4 +1,4 @@
-﻿import type { Booking } from "generated/prisma/client";
+﻿import type { Booking } from "../generated/prisma/client";
 
 export const MOCK_BOOKING: Omit<Booking, "createdAt" | "updatedAt">[] = [
   {
