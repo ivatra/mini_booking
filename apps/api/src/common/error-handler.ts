@@ -4,9 +4,12 @@ import { AppError } from "./http-error.js";
 
 export const errorHandler = (
   error: FastifyError | AppError,
-  _request: FastifyRequest,
+  request: FastifyRequest,
   reply: FastifyReply,
 ) => {
+  // Log full error for debugging
+  console.error("Error:", error);
+
   if (error instanceof AppError) {
     return reply.status(error.statusCode).send({
       message: error.message,
@@ -22,5 +25,6 @@ export const errorHandler = (
 
   return reply.status(500).send({
     message: "Internal server error",
+    error: process.env.NODE_ENV === "development" ? error.message : undefined,
   });
 };

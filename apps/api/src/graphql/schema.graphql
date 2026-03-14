@@ -17,6 +17,7 @@ type Room {
   updatedAt: String!
   hotel: Hotel!
   bookings: [Booking!]!
+  isAvailable(checkIn: String, checkOut: String): Boolean!
 }
 
 type Booking {
@@ -48,4 +49,8 @@ type Mutation {
   createBooking(roomId: ID!, checkIn: String!, checkOut: String!): Booking!
   cancelBooking(bookingId: ID!): Boolean!
   confirmBooking(bookingId: ID!): Boolean!
+}
+
+type Subscription {
+  bookingStatusChanged(roomId: ID!): Booking!
 }

@@ -1,23 +1,128 @@
-﻿### Health
+﻿### REST API TESTS
+
+### 1. Health Check
 GET http://127.0.0.1:8080/api/health
 
-### Hotels list
-GET http://127.0.0.1:8080/api/hotels
+### 2. Get All Hotels
+GET http://127.0.0.1:8080/api/rest/hotels
 
-### Rooms by hotel
-GET http://127.0.0.1:8080/api/rooms?hotelId=hotel_1
+### 3. Get Rooms by Hotel ID
+GET http://127.0.0.1:8080/api/rest/rooms?hotelId=hotel_1
 
+### 4. Get All Bookings
+GET http://127.0.0.1:8080/api/rest/bookings
 
-### Create booking
-POST http://127.0.0.1:8080/api/bookings
+### 5. Create Booking
+POST http://127.0.0.1:8080/api/rest/bookings
 content-type: application/json
 
 {
   "roomId": "room_1",
-  "guestName": "Ivan Petrov",
-  "checkIn": "2026-03-10",
-  "checkOut": "2026-03-12"
+  "guestName": "John Doe",
+  "checkIn": "2026-03-15",
+  "checkOut": "2026-03-18"
 }
 
-### Bookings List
-GET http://127.0.0.1:8080/api/bookings
+### 6. Create Another Booking
+POST http://127.0.0.1:8080/api/rest/bookings
+content-type: application/json
+
+{
+  "roomId": "room_2",
+  "guestName": "Jane Smith",
+  "checkIn": "2026-03-16",
+  "checkOut": "2026-03-20"
+}
+
+### 7. Create Booking with Invalid Data (should fail - too short)
+POST http://127.0.0.1:8080/api/rest/bookings
+content-type: application/json
+
+{
+  "roomId": "r",
+  "guestName": "A",
+  "checkIn": "2026-03-15",
+  "checkOut": "2026-03-18"
+}
+
+### GRAPHQL TESTS
+
+### 8. GraphQL - Get All Hotels with Cities
+POST http://127.0.0.1:8080/api/graphql
+content-type: application/json
+
+{
+  "query": "query GetHotels { hotels { id name city } }"
+}
+
+### 9. GraphQL - Get Hotel with Rooms
+POST http://127.0.0.1:8080/api/graphql
+content-type: application/json
+
+{
+  "query": "query GetHotelWithRooms { hotel(id: \"hotel_1\") { id name city rooms { id name capacity pricePerNight } } }"
+}
+
+### 10. GraphQL - Get Rooms for Hotel
+POST http://127.0.0.1:8080/api/graphql
+content-type: application/json
+
+{
+  "query": "query GetRooms { rooms(hotelId: \"hotel_1\") { id name capacity pricePerNight isAvailable } }"
+}
+
+### 11. GraphQL - Get Room with Availability (no dates)
+POST http://127.0.0.1:8080/api/graphql
+content-type: application/json
+
+{
+  "query": "query GetRoom { room(id: \"room_1\") { id name capacity pricePerNight isAvailable } }"
+}
+
+### 12. GraphQL - Get Room Availability (specific dates)
+POST http://127.0.0.1:8080/api/graphql
+content-type: application/json
+
+{
+  "query": "query GetRoomAvailability { room(id: \"room_1\") { id name isAvailable(checkIn: \"2026-03-15\", checkOut: \"2026-03-18\") } }"
+}
+
+### 13. GraphQL - Get Bookings for Room
+POST http://127.0.0.1:8080/api/graphql
+content-type: application/json
+
+{
+  "query": "query GetBookings { bookings(roomId: \"room_1\") { id roomId checkIn checkOut status room { id name } } }"
+}
+
+### 14. GraphQL - Create Booking Mutation
+POST http://127.0.0.1:8080/api/graphql
+content-type: application/json
+
+{
+  "query": "mutation CreateBooking { createBooking(roomId: \"room_3\", checkIn: \"2026-03-21\", checkOut: \"2026-03-23\") { id roomId checkIn checkOut status } }"
+}
+
+### 15. GraphQL - Get Single Booking
+POST http://127.0.0.1:8080/api/graphql
+content-type: application/json
+
+{
+  "query": "query GetBooking { booking(id: \"booking_1\") { id roomId checkIn checkOut status room { id name } } }"
+}
+
+### 16. GraphQL - Confirm Booking
+POST http://127.0.0.1:8080/api/graphql
+content-type: application/json
+
+{
+  "query": "mutation ConfirmBooking { confirmBooking(bookingId: \"booking_1\") }"
+}
+
+### 17. GraphQL - Cancel Booking
+POST http://127.0.0.1:8080/api/graphql
+content-type: application/json
+
+{
+  "query": "mutation CancelBooking { cancelBooking(bookingId: \"booking_1\") }"
+}

@@ -37,7 +37,7 @@ export interface IUseBookingsStore {
 
   _updateBookingStatus: (bookingId: string, status: TBookingStatus) => void;
 
-  subscribeToRoomBookingStatusChange: (roomid: string) => void;
+  subscribeToRoomBookingStatusChange: (roomid: string) => Promise<void>;
   unSubscribeFromRoomBookingStatusChange: (roomId: string) => void;
   unSubscribeFromAllRoomsBookingStatusChange: () => void;
 }
@@ -49,12 +49,14 @@ export interface IApi {
 
   cancelBook: (bookingId: string) => Promise<void>;
 
-  createBooking: (params: ICreateBookingParams) => Promise<IBooking>;
+  createBooking: (
+    params: ICreateBookingParams,
+  ) => Promise<IBooking | undefined>;
 
   subscribeToRoomBookingStatusChange: (
     roomid: string,
     onUpdate: (bookingId: string, status: TBookingStatus) => void,
-  ) => () => void; // возвращает unsubscribe функцию
+  ) => Promise<() => void>; // возвращает unsubscribe функцию
 }
 
 export interface CreateBookingModalStore {

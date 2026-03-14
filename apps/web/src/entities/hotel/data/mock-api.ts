@@ -1,33 +1,11 @@
-import { client } from "@shared/graphql/client";
-import { GET_HOTELS } from "@shared/graphql/queries";
+import { MOCK_HOTELS } from "@shared";
 
-import type { IApi, IHotel } from "./types";
+import type { IApi } from "./types";
 
 export const api: IApi = {
   getHotels: async () => {
-    try {
-      const response = await client.query({
-        query: GET_HOTELS,
-      });
-      const data = response.data as any;
+    await new Promise((resolve) => setTimeout(resolve, 250));
 
-      const hotels: IHotel[] = data.hotels.map(
-        (
-          hotel: Omit<IHotel, "roomsLength"> & {
-            rooms?: Array<{ id: string }>;
-          },
-        ) => ({
-          id: hotel.id,
-          name: hotel.name,
-          city: hotel.city,
-          address: hotel.address || "",
-          roomsLength: hotel.rooms?.length || 0,
-        }),
-      );
-
-      return hotels;
-    } catch (error) {
-      throw error;
-    }
+    return MOCK_HOTELS;
   },
 };

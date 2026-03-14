@@ -1,6 +1,5 @@
 ﻿export { analytics } from "./analytics";
 export { client } from "./graphql/client";
-export * from "./graphql/queries";
 
 export { useDateRangeStore } from "./data/use-date-range-store";
 export { useAsyncAction } from "./data/use-async-action";

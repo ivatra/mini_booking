@@ -21,7 +21,7 @@ const envSchema = {
       enum: ["development", "production", "test"],
       default: "development",
     },
-    CORS_ORIGIN: { type: "string", default: "*" },
+    CORS_ORIGIN: { type: "string", default: "http://localhost:5174" },
     RATE_LIMIT_MAX: { type: "number", default: 100 },
     RATE_LIMIT_WINDOW_MS: { type: "number", default: 60_000 },
   },
