@@ -64,6 +64,10 @@ export const CreateBookingModal = ({ opened, onClose }: IProps) => {
         <DatePickerInput
           minDate={new Date()}
           type="range"
+          popoverProps={{
+            position: "bottom",
+            middlewares: { flip: false, shift: false },
+          }}
           label="Даты проживания"
           placeholder="Выберите даты"
           value={dates}

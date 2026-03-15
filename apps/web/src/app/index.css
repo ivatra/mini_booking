@@ -14,3 +14,16 @@
     scroll-behavior: auto !important;
   }
 }
+
+@media (max-width: 768px) {
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 16px !important;
+  }
+
+  .mantine-Tooltip-tooltip {
+    display: none !important;
+  }
+}

@@ -24,7 +24,7 @@ export const RoomCard = ({
       <Group className={s.roomHead}>
         <Group className={s.roomTitleGroup}>
           <Title
-            order={3}
+            order={4}
             className={s.roomName}>
             Комната {room.name}
           </Title>

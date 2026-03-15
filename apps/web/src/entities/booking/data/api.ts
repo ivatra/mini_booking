@@ -100,15 +100,20 @@ export const api: IApi = Number(getEnvVar("VITE_MOCK"))
               }
             },
             error: (err) => {
-              if (import.meta.env.DEV) {
+              if (getEnvVar("DEV")) {
                 console.error("Subscription error:", err);
               }
             },
           });
 
-        // Return unsubscribe function
+        console.log(`Subscribed to booking status changes for room ${roomId}`);
+
         return () => {
           subscription.unsubscribe();
+
+          console.log(
+            `Unsubscribed from booking status changes for room ${roomId}`,
+          );
         };
       },
     };

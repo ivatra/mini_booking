@@ -35,7 +35,7 @@ export const DetailsPage = () => {
         />
       </Group>
 
-      <GridList>
+      <GridList hasFilters>
         {rooms.map((room) => (
           <RoomCard
             key={room.id}

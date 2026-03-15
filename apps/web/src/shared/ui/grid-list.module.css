@@ -1,5 +1,4 @@
 .scrollWrapper {
-  max-height: calc(100dvh - 280px);
   overflow-y: auto;
   background-color: inherit;
 }
