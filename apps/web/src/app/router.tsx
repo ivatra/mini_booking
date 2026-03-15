@@ -4,7 +4,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./ui/layout/layout";
 
 const RootRouter = () => (
-  <BrowserRouter>
+  <BrowserRouter basename="/s/booking">
     <Layout>
       <Routes>
         <Route

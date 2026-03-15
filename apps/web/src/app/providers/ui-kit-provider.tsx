@@ -5,7 +5,7 @@ interface IProps {
 }
 
 const RootUiKitProvider = ({ children }: IProps) => (
-  <UIKitProvider defaultColorScheme="light">{children}</UIKitProvider>
+  <UIKitProvider defaultColorScheme="dark">{children}</UIKitProvider>
 );
 
 export default RootUiKitProvider;
