@@ -9,6 +9,8 @@ import { useServer } from "graphql-ws/use/ws";
 import { join } from "path";
 import { WebSocketServer } from "ws";
 
+import { getEnvVar } from "@common/helpers/index.js";
+
 import type { BookingService } from "@entities/booking/booking.service.js";
 import type { HotelService } from "@entities/hotel/hotel.service.js";
 import type { RoomService } from "@entities/room/room.service.js";
@@ -30,8 +32,8 @@ export const graphqlRoutes: FastifyPluginAsync<{
 
   const apolloServer = new ApolloServer<Context>({
     schema,
-    // Enable introspection and sandbox
-    introspection: true,
+    // Disable introspection and sandbox in production
+    introspection: getEnvVar("NODE_ENV") !== "production",
     plugins: [fastifyApolloDrainPlugin(app)],
   });
 
@@ -57,42 +59,44 @@ export const graphqlRoutes: FastifyPluginAsync<{
     context: async () => contextValue(),
   });
 
-  // Serve GraphiQL IDE on /sandbox
-  app.get("/sandbox", async (request, reply) => {
-    reply.type("text/html");
-    return `
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <title>GraphiQL</title>
-          <style>
-            body {
-              height: 100%;
-              margin: 0;
-              width: 100%;
-              overflow: hidden;
-            }
-            #graphiql {
-              height: 100vh;
-            }
-          </style>
-          <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-          <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-          <link rel="stylesheet" href="https://unpkg.com/graphiql@3/graphiql.min.css" />
-        </head>
-        <body>
-          <div id="graphiql">Loading...</div>
-          <script src="https://unpkg.com/graphiql@3/graphiql.min.js" type="application/javascript"></script>
-          <script>
-            ReactDOM.createRoot(document.getElementById('graphiql')).render(
-              React.createElement(GraphiQL, {
-                fetcher: GraphiQL.createFetcher({ url: 'http://localhost:8080/api/graphql' }),
-                defaultQuery: 'query GetHotels {\\n  hotels {\\n    id\\n    name\\n    city\\n  }\\n}',
-              }),
-            );
-          </script>
-        </body>
-      </html>
-    `;
-  });
+  // Serve GraphiQL IDE on /sandbox (development only)
+  if (getEnvVar("NODE_ENV") !== "production") {
+    app.get("/sandbox", async (request, reply) => {
+      reply.type("text/html");
+      return `
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <title>GraphiQL</title>
+            <style>
+              body {
+                height: 100%;
+                margin: 0;
+                width: 100%;
+                overflow: hidden;
+              }
+              #graphiql {
+                height: 100vh;
+              }
+            </style>
+            <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+            <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+            <link rel="stylesheet" href="https://unpkg.com/graphiql@3/graphiql.min.css" />
+          </head>
+          <body>
+            <div id="graphiql">Loading...</div>
+            <script src="https://unpkg.com/graphiql@3/graphiql.min.js" type="application/javascript"></script>
+            <script>
+              ReactDOM.createRoot(document.getElementById('graphiql')).render(
+                React.createElement(GraphiQL, {
+                  fetcher: GraphiQL.createFetcher({ url: 'http://localhost:8080/api/graphql' }),
+                  defaultQuery: 'query GetHotels {\\n  hotels {\\n    id\\n    name\\n    city\\n  }\\n}',
+                }),
+              );
+            </script>
+          </body>
+        </html>
+      `;
+    });
+  }
 };

@@ -1,11 +1,13 @@
 import { PrismaPg } from "@prisma/adapter-pg";
 
+import { getEnvVar } from "@common/helpers";
+
 import { PrismaClient } from "./generated/prisma/client";
 import { MOCK_BOOKING } from "./mock-data/booking";
 import { MOCK_HOTELS } from "./mock-data/hotels";
 import { MOCK_ROOMS } from "./mock-data/rooms";
 
-const connectionString = process.env["DATABASE_URL"];
+const connectionString = getEnvVar("DATABASE_URL");
 
 const adapter = new PrismaPg({ connectionString });
 const prisma = new PrismaClient({ adapter });

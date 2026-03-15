@@ -1,5 +1,6 @@
 ﻿import type { FastifyError, FastifyReply, FastifyRequest } from "fastify";
 
+import { getEnvVar } from "./helpers/index.js";
 import { AppError } from "./http-error.js";
 
 export const errorHandler = (
@@ -25,6 +26,6 @@ export const errorHandler = (
 
   return reply.status(500).send({
     message: "Internal server error",
-    error: process.env.NODE_ENV === "development" ? error.message : undefined,
+    error: getEnvVar("NODE_ENV") === "development" ? error.message : undefined,
   });
 };
