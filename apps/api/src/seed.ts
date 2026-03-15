@@ -1,6 +1,15 @@
 import { PrismaPg } from "@prisma/adapter-pg";
 
-import { getEnvVar } from "@common/helpers";
+function getEnvVar(name: string, defaultValue?: string): string {
+  const value = process.env[name];
+  if (value === undefined) {
+    if (defaultValue !== undefined) {
+      return defaultValue;
+    }
+    throw new Error(`Environment variable ${name} is not set`);
+  }
+  return value;
+}
 
 import { PrismaClient } from "./generated/prisma/client";
 import { MOCK_BOOKING } from "./mock-data/booking";

@@ -15,7 +15,7 @@ const envSchema = {
   required: ["HOST", "PORT"],
   properties: {
     HOST: { type: "string", default: "0.0.0.0" },
-    PORT: { type: "number", default: 8080 },
+    PORT: { type: "number", default: 5003 },
     NODE_ENV: {
       type: "string",
       enum: ["development", "production", "test"],

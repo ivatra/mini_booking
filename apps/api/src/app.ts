@@ -17,7 +17,7 @@ export const buildApp = async () => {
 
   app.setErrorHandler(errorHandler);
 
-  await app.register(apiRoutes, { prefix: "/api" });
+  await app.register(apiRoutes);
 
   return app;
 };

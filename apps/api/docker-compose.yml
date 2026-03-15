@@ -1,5 +1,7 @@
 services:
   db:
+    # networks:
+    #   - api_network
     build:
       context: .
       dockerfile: Dockerfile.postgres
@@ -14,10 +16,36 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-mini_booking}"]
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-mini_booking}",
+        ]
       interval: 5s
       timeout: 5s
       retries: 10
 
+  # api:
+  #   networks:
+  #     - api_network
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   container_name: mini_booking_api
+  #   restart: unless-stopped
+  #   ports:
+  #     - "5003:5003"
+  #   env_file:
+  #     - .env
+  #   depends_on:
+  #     db:
+  #       condition: service_healthy
+  #   environment:
+  #     - DATABASE_URL=postgresql://postgres:postgres@db:5432/mini_booking?schema=public
+
 volumes:
   postgres_data:
+
+# networks:
+#   api_network:
+#     name: api_network

@@ -46,7 +46,7 @@ export const graphqlRoutes: FastifyPluginAsync<{
   useServer({ schema, context: contextValue }, wsServer);
 
   app.server.on("upgrade", (request, socket, head) => {
-    if (request.url === "/api/graphql") {
+    if (request.url === "/graphql") {
       wsServer.handleUpgrade(request, socket, head, (client) => {
         wsServer.emit("connection", client, request);
       });
@@ -89,7 +89,7 @@ export const graphqlRoutes: FastifyPluginAsync<{
             <script>
               ReactDOM.createRoot(document.getElementById('graphiql')).render(
                 React.createElement(GraphiQL, {
-                  fetcher: GraphiQL.createFetcher({ url: 'http://localhost:8080/api/graphql' }),
+                  fetcher: GraphiQL.createFetcher({ url: 'http://localhost:5003/graphql' }),
                   defaultQuery: 'query GetHotels {\\n  hotels {\\n    id\\n    name\\n    city\\n  }\\n}',
                 }),
               );

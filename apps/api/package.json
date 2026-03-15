@@ -4,7 +4,7 @@
   "scripts": {
     "codegen": "graphql-codegen",
     "dev": "cross-env NODE_ENV=development tsx watch src/index.ts",
-    "build": "cross-env NODE_ENV=production tsup src/index.ts --format esm --target node20 --clean --dts --shims --out-dir dist",
+    "build": "tsup src/index.ts",
     "start": "cross-env NODE_ENV=production node dist/index.js",
     "check": "tsc --noEmit -p tsconfig.json",
     "lint": "eslint . --ext .ts",

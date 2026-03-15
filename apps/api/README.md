@@ -65,7 +65,7 @@ Create a `.env` file in `apps/api/`:
 ```env
 DATABASE_URL=postgresql://postgres:postgres@localhost:5432/mini_booking
 HOST=0.0.0.0
-PORT=8080
+PORT=5003
 NODE_ENV=development
 CORS_ORIGIN=*
 RATE_LIMIT_MAX=100
@@ -91,7 +91,7 @@ npx tsx src/seed.ts
 npm run dev
 ```
 
-The GraphQL endpoint is available at `http://localhost:8080/graphql`.
+The GraphQL endpoint is available at `http://localhost:5003/graphql`.
 
 ## Scripts
 
@@ -143,7 +143,7 @@ enum BookingStatus { avaliable | busy }
 | ---------------------- | ------------- | -------------------------------------------------- |
 | `bookingStatusChanged` | `roomId: ID!` | `createBooking`, `cancelBooking`, `confirmBooking` |
 
-Subscriptions are served over WebSocket (`ws://localhost:8080/graphql`) using the `graphql-ws` protocol.
+Subscriptions are served over WebSocket (`ws://localhost:5003/graphql`) using the `graphql-ws` protocol.
 
 ### `isAvailable` field
 

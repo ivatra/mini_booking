@@ -1,15 +1,22 @@
 ﻿### GRAPHQL TESTS
 
+## 0
+# GET http://ivatra.tech/api/booking/health
+
+## 00 11
+GET http://127.0.0.1:5004/health
+
 ### 1. GraphQL - Get All Hotels with Cities
-POST http://127.0.0.1:8080/api/graphql
+
+POST http://127.0.0.1:5004/graphql
 content-type: application/json
 
 {
-  "query": "query GetHotels { hotels { id name city } }"
+"query": "query GetHotels { hotels { id name city } }"
 }
 
 ### 2. GraphQL - Get Hotel with Rooms
-POST http://127.0.0.1:8080/api/graphql
+POST http://127.0.0.1:5004/graphql
 content-type: application/json
 
 {
@@ -17,7 +24,7 @@ content-type: application/json
 }
 
 ### 3. GraphQL - Get Rooms for Hotel
-POST http://127.0.0.1:8080/api/graphql
+POST http://127.0.0.1:5004/graphql
 content-type: application/json
 
 {
@@ -25,7 +32,7 @@ content-type: application/json
 }
 
 ### 4. GraphQL - Get Room with Availability (no dates)
-POST http://127.0.0.1:8080/api/graphql
+POST http://127.0.0.1:5004/graphql
 content-type: application/json
 
 {
@@ -33,7 +40,7 @@ content-type: application/json
 }
 
 ### 5. GraphQL - Get Room Availability (specific dates)
-POST http://127.0.0.1:8080/api/graphql
+POST http://127.0.0.1:5004/graphql
 content-type: application/json
 
 {
@@ -41,7 +48,7 @@ content-type: application/json
 }
 
 ### 6. GraphQL - Get Bookings for Room
-POST http://127.0.0.1:8080/api/graphql
+POST http://127.0.0.1:5004/graphql
 content-type: application/json
 
 {
@@ -49,7 +56,7 @@ content-type: application/json
 }
 
 ### 7. GraphQL - Get Single Booking
-POST http://127.0.0.1:8080/api/graphql
+POST http://127.0.0.1:5004/graphql
 content-type: application/json
 
 {
@@ -57,7 +64,7 @@ content-type: application/json
 }
 
 ### 8. GraphQL - Create Booking Mutation
-POST http://127.0.0.1:8080/api/graphql
+POST http://127.0.0.1:5004/graphql
 content-type: application/json
 
 {
@@ -65,7 +72,7 @@ content-type: application/json
 }
 
 ### 9. GraphQL - Confirm Booking
-POST http://127.0.0.1:8080/api/graphql
+POST http://127.0.0.1:5004/graphql
 content-type: application/json
 
 {
@@ -73,9 +80,17 @@ content-type: application/json
 }
 
 ### 10. GraphQL - Cancel Booking
-POST http://127.0.0.1:8080/api/graphql
+POST http://127.0.0.1:5004/graphql
 content-type: application/json
 
 {
   "query": "mutation CancelBooking { cancelBooking(bookingId: \"booking-4\") }"
+}
+
+### 11. GraphQL - Cancel Booking
+POST https://ivatra.tech/api/booking/graphql
+content-type: application/json
+
+{
+  "query": "query GetRoom { room(id: \"room-101\") { id name capacity pricePerNight isAvailable } }"
 }
